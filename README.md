@@ -1,6 +1,6 @@
-# Шаг за перевал
+# Шаг за перевал (Step Over the Pass)
 
-Website for Sergey Zharakhin's author-led tours: small groups, remote trails, and unforgettable landscapes.
+A project for Sergey Zharakhin's author-led tours, focused on small-group adventures, remote trails, and unforgettable landscapes.
 
 ## Stack
 
