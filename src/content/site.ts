@@ -4,7 +4,7 @@ export const navLinks = [
   { href: "/contacts", label: "Контакты" },
 ] as const;
 
-// TODO: заменить заглушки Telegram / VK на реальные ссылки
+// TODO: replace Telegram / VK placeholders with real links
 export const contacts = {
   email: "hello@shagzapereval.ru",
   phone: "+7 913 000 00 00",

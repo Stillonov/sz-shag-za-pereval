@@ -1,80 +1,80 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Дизайн-система «Шаг за перевал»
-   Источник значений: sources/design_handoff_sz_tours/README.md
-   Tailwind v4: токены объявляются здесь, конфиг-файла нет.
+   «Шаг за перевал» design system
+   Values sourced from sources/design_handoff_sz_tours/README.md
+   Tailwind v4: tokens are declared here, there is no config file.
    ========================================================================== */
 
 @theme {
-  /* --- Цвета ------------------------------------------------------------ */
-  --color-bg: #f2ede3; /* крем: фон body и светлых секций */
-  --color-ink: #26221e; /* тёмный: текст, тёмные секции, футер */
-  --color-panel: #e9e3d7; /* карточки отзывов, секция «Гиды» */
-  --color-body: #4c463d; /* параграфы на светлом */
-  --color-body-strong: #3a352d; /* списки «включено / не включено» */
-  --color-muted: #8a8375; /* подписи, мелкий текст */
-  --color-accent: #b5623f; /* акценты, кнопки, теги, номера секций */
-  --color-cream: #f2ede3; /* текст на тёмном; полупрозрачность через /72, /55, /40 … */
+  /* --- Colors ------------------------------------------------------------ */
+  --color-bg: #f2ede3; /* cream: background of body and light sections */
+  --color-ink: #26221e; /* dark: text, dark sections, footer */
+  --color-panel: #e9e3d7; /* review cards, "Guides" section */
+  --color-body: #4c463d; /* paragraphs on light background */
+  --color-body-strong: #3a352d; /* "included / not included" lists */
+  --color-muted: #8a8375; /* captions, small text */
+  --color-accent: #b5623f; /* accents, buttons, tags, section numbers */
+  --color-cream: #f2ede3; /* text on dark; use opacity modifiers /72, /55, /40 … */
 
-  /* --- Шрифты ----------------------------------------------------------- */
+  /* --- Fonts --------------------------------------------------------------- */
   --font-sans: var(--font-onest), system-ui, sans-serif;
   --font-serif: var(--font-source-serif), Georgia, serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
-  /* --- Типографическая шкала -------------------------------------------- */
-  /* H1 страницы */
+  /* --- Type scale --------------------------------------------------------- */
+  /* Page H1 */
   --text-h1: clamp(52px, 8vw, 90px);
   --text-h1--line-height: 0.9;
   --text-h1--letter-spacing: -0.02em;
 
-  /* H1 героя маршрута */
+  /* Trip hero H1 */
   --text-h1-hero: clamp(52px, 8vw, 120px);
   --text-h1-hero--line-height: 0.85;
   --text-h1-hero--letter-spacing: -0.01em;
 
-  /* H2 секции */
+  /* Section H2 */
   --text-h2: clamp(34px, 5.5vw, 64px);
   --text-h2--line-height: 0.95;
   --text-h2--letter-spacing: -0.02em;
 
-  /* H3 карточки */
+  /* Card H3 */
   --text-h3: clamp(38px, 4vw, 56px);
   --text-h3--line-height: 1;
 
-  /* Лид-абзац (serif) */
+  /* Lead paragraph (serif) */
   --text-lead: clamp(26px, 3.5vw, 46px);
   --text-lead--line-height: 1.22;
 
-  /* Цитата (serif) */
+  /* Quote (serif) */
   --text-quote: clamp(28px, 3.6vw, 46px);
   --text-quote--line-height: 1.45;
 
-  /* Цена в блоке «Стоимость» */
+  /* Price in the "Cost" block */
   --text-price: clamp(36px, 5.4vw, 80px);
   --text-price--line-height: 1;
 
-  /* Заголовок слайда на главной */
+  /* Slide title on the home page */
   --text-slide: clamp(28.5px, 2.86vw, 40.4px);
   --text-slide--line-height: 1.1;
 
-  /* Основной текст */
+  /* Body text */
   --text-body: 17px;
   --text-body--line-height: 1.65;
 
-  /* Мелкий текст / дисклеймеры */
+  /* Fine print / disclaimers */
   --text-fine: 12px;
   --text-fine--line-height: 1.5;
 
-  /* --- Радиусы ---------------------------------------------------------- */
-  --radius-base: 6px; /* дефолт по всему сайту */
-  --radius-card: 8px; /* карточки путешествий и отзывов */
-  --radius-pill: 40px; /* пилюля «Подробнее» */
+  /* --- Radii --------------------------------------------------------------- */
+  --radius-base: 6px; /* default across the site */
+  --radius-card: 8px; /* trip and review cards */
+  --radius-pill: 40px; /* "Learn more" pill */
 
-  /* --- Контейнеры ------------------------------------------------------- */
-  --container-page: 1280px; /* основной контейнер */
-  --container-narrow: 1000px; /* форма заявки, «Оргмоменты» */
-  --container-quote: 920px; /* цитата */
+  /* --- Containers ------------------------------------------------------------ */
+  --container-page: 1280px; /* main container */
+  --container-narrow: 1000px; /* application form, "Logistics" */
+  --container-quote: 920px; /* quote */
 }
 
 @layer base {
@@ -88,7 +88,7 @@
     font-family: var(--font-sans);
   }
 
-  /* В референсе h1–h3 всегда Source Serif 4 с весом 500 */
+  /* Reference always renders h1-h3 in Source Serif 4 at weight 500 */
   h1,
   h2,
   h3 {
@@ -103,11 +103,11 @@
   }
 }
 
-/* --- Утилиты --------------------------------------------------------------
-   Повторяющиеся комбинации из макета. Всё остальное — обычными классами.
+/* --- Utilities --------------------------------------------------------------
+   Recurring combinations from the design. Everything else uses plain classes.
    ------------------------------------------------------------------------ */
 
-/* Надзаголовок секции: моно, uppercase, accent */
+/* Section eyebrow: mono, uppercase, accent */
 @utility eyebrow {
   color: var(--color-accent);
   font-family: var(--font-mono);
@@ -117,7 +117,7 @@
   text-transform: uppercase;
 }
 
-/* Моно-метка: даты, теги, цены, подписи */
+/* Mono label: dates, tags, prices, captions */
 @utility mono-label {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -126,7 +126,7 @@
   text-transform: uppercase;
 }
 
-/* Кнопка-надпись: моно, uppercase, широкий трекинг */
+/* Button label: mono, uppercase, wide tracking */
 @utility mono-button {
   font-family: var(--font-mono);
   font-size: 16px;
@@ -135,14 +135,14 @@
   text-transform: uppercase;
 }
 
-/* Основной контейнер секции */
+/* Main section container */
 @utility container-page {
   margin-inline: auto;
   max-width: var(--container-page);
   padding-inline: 40px;
 }
 
-/* Горизонтальные слайдеры: скроллбар скрыт */
+/* Horizontal sliders: scrollbar hidden */
 @utility no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -152,7 +152,7 @@
   }
 }
 
-/* Градиент-оверлеи поверх фото */
+/* Gradient overlays over photos */
 @utility overlay-hero {
   background-image: linear-gradient(
     180deg,
@@ -181,7 +181,7 @@
   );
 }
 
-/* Фолбэк для фото галереи, которых ещё нет */
+/* Fallback for gallery photos that don't exist yet */
 @utility photo-placeholder {
   background-image: repeating-linear-gradient(135deg, #d8d2c4 0 20px, #cec7b6 20px 40px);
 }

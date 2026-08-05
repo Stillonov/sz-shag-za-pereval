@@ -32,8 +32,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${onest.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body>
-        {/* Контент перекрывает футер и «уезжает» с него при скролле —
-            футер прибит к низу вьюпорта и лежит ниже по z-оси. */}
+        {/* Content sits above the footer and scrolls off it — the footer is
+            pinned to the bottom of the viewport, lower on the z-axis. */}
         <div className="bg-bg relative z-10 flex min-h-dvh flex-col">
           <Header />
           {children}

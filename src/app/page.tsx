@@ -1,5 +1,5 @@
 export default function Home() {
-  // Секции главной (герой-слайдер, манифест, путешествия, отзывы, CTA)
-  // добавляем следом — их компоненты лягут в src/app/_components.
+  // Home page sections (hero slider, manifesto, trips, reviews, CTA)
+  // come next — their components will live in src/app/_components.
   return <main className="flex-1" />;
 }

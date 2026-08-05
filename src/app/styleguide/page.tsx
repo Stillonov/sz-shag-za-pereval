@@ -20,7 +20,7 @@ export default function Styleguide() {
       <p className="eyebrow mb-6">Дизайн-система</p>
       <h1 className="text-h1">Токены</h1>
 
-      {/* Цвета */}
+      {/* Colors */}
       <section className="mt-24">
         <h2 className="text-h2">Цвета</h2>
         <div className="mt-10 grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-6">
@@ -52,7 +52,7 @@ export default function Styleguide() {
         </div>
       </section>
 
-      {/* Шрифты */}
+      {/* Fonts */}
       <section className="mt-24">
         <h2 className="text-h2">Шрифты</h2>
         <div className="mt-10 flex flex-col gap-10">
@@ -76,7 +76,7 @@ export default function Styleguide() {
         </div>
       </section>
 
-      {/* Типографика */}
+      {/* Type scale */}
       <section className="mt-24">
         <h2 className="text-h2">Типографическая шкала</h2>
         <div className="border-ink/22 mt-10 flex flex-col gap-10 border-t pt-10">
@@ -136,7 +136,7 @@ export default function Styleguide() {
         </div>
       </section>
 
-      {/* Компоненты */}
+      {/* Elements */}
       <section className="mt-24">
         <h2 className="text-h2">Элементы</h2>
         <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -183,7 +183,7 @@ export default function Styleguide() {
         </div>
       </section>
 
-      {/* Радиусы и контейнеры */}
+      {/* Radii and containers */}
       <section className="mt-24 mb-24">
         <h2 className="text-h2">Радиусы и контейнеры</h2>
         <div className="text-fine text-body-strong mt-10 flex flex-col gap-3 font-mono">
