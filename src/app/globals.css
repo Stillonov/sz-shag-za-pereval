@@ -18,9 +18,15 @@
   --color-cream: #f2ede3; /* text on dark; use opacity modifiers /72, /55, /40 … */
 
   /* --- Fonts --------------------------------------------------------------- */
-  --font-sans: var(--font-onest), system-ui, sans-serif;
-  --font-serif: var(--font-source-serif), Georgia, serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-sans:
+    var(--font-onest), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-serif:
+    var(--font-source-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono:
+    var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 
   /* --- Type scale --------------------------------------------------------- */
   /* Page H1 */
