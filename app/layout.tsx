@@ -18,9 +18,18 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  // TODO: set once the production domain is known, e.g. new URL("https://sz-tours.ru")
+  // metadataBase: new URL(""),
   title: "Шаг за перевал",
   description:
     "Авторские туры Сергея Жарахина: небольшие группы, маршруты вдали от людных троп и незабываемые горные пейзажи.",
+  openGraph: {
+    url: "/",
+    title: "",
+    description: "",
+    locale: "",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
