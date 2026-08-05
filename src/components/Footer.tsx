@@ -18,7 +18,7 @@ export function Footer() {
           <p className="text-cream/55 mt-2.5 text-xs">{site.tagline}</p>
         </div>
 
-        <div className="flex gap-5.5 text-base whitespace-nowrap">
+        <div className="flex gap-6 text-base whitespace-nowrap">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -42,7 +42,7 @@ export function Footer() {
               {contacts.phone}
             </a>
           </div>
-          <div className="flex gap-5.5 font-mono text-xs tracking-widest uppercase">
+          <div className="flex gap-6 font-mono text-xs tracking-widest uppercase">
             <a
               href={contacts.telegram}
               className="opacity-70 hover:underline hover:underline-offset-4"
