@@ -15,10 +15,10 @@ export function Footer() {
             height={44}
             className="h-11 w-auto"
           />
-          <p className="text-cream/55 mt-2.5 text-[12.6px]">{site.tagline}</p>
+          <p className="text-cream/55 mt-2.5 text-xs">{site.tagline}</p>
         </div>
 
-        <div className="flex gap-[22px] text-base whitespace-nowrap">
+        <div className="flex gap-5.5 text-base whitespace-nowrap">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -31,7 +31,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-end gap-3.5 text-right">
-          <div className="text-cream/72 font-mono text-[13px]/[1.7]">
+          <div className="text-cream/72 font-mono text-sm leading-relaxed">
             <a
               href={`mailto:${contacts.email}`}
               className="block hover:underline hover:underline-offset-4"
@@ -42,7 +42,7 @@ export function Footer() {
               {contacts.phone}
             </a>
           </div>
-          <div className="flex gap-[22px] font-mono text-xs tracking-[0.1em] uppercase">
+          <div className="flex gap-5.5 font-mono text-xs tracking-widest uppercase">
             <a
               href={contacts.telegram}
               className="opacity-70 hover:underline hover:underline-offset-4"
@@ -56,7 +56,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-page border-cream/14 text-cream/40 mx-auto mt-10 border-t pt-6 font-mono text-[11px] tracking-[0.08em]">
+      <div className="max-w-page border-cream/14 text-cream/40 mx-auto mt-10 border-t pt-6 font-mono text-xs tracking-widest">
         {site.copyright}
       </div>
     </footer>

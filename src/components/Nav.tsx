@@ -9,7 +9,7 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center gap-[30px] text-base">
+    <nav className="flex items-center gap-7.5 text-base">
       {navLinks.map((link) => {
         const isActive = pathname === link.href;
 
