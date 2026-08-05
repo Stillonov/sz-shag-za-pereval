@@ -1,8 +1,8 @@
 # Шаг за перевал
 
-Сайт авторских туров Сергея Жарахина: малые группы, дальние маршруты, места, которые запоминаются надолго.
+Website for Sergey Zharakhin's author-led tours: small groups, remote trails, and unforgettable landscapes.
 
-## Стек
+## Stack
 
 - [Next.js](https://nextjs.org/) (App Router)
 - [TypeScript](https://www.typescriptlang.org/)
