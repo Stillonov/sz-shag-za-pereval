@@ -1,26 +1,187 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   Дизайн-система «Шаг за перевал»
+   Источник значений: sources/design_handoff_sz_tours/README.md
+   Tailwind v4: токены объявляются здесь, конфиг-файла нет.
+   ========================================================================== */
+
+@theme {
+  /* --- Цвета ------------------------------------------------------------ */
+  --color-bg: #f2ede3; /* крем: фон body и светлых секций */
+  --color-ink: #26221e; /* тёмный: текст, тёмные секции, футер */
+  --color-panel: #e9e3d7; /* карточки отзывов, секция «Гиды» */
+  --color-body: #4c463d; /* параграфы на светлом */
+  --color-body-strong: #3a352d; /* списки «включено / не включено» */
+  --color-muted: #8a8375; /* подписи, мелкий текст */
+  --color-accent: #b5623f; /* акценты, кнопки, теги, номера секций */
+  --color-cream: #f2ede3; /* текст на тёмном; полупрозрачность через /72, /55, /40 … */
+
+  /* --- Шрифты ----------------------------------------------------------- */
+  --font-sans: var(--font-onest), system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* --- Типографическая шкала -------------------------------------------- */
+  /* H1 страницы */
+  --text-h1: clamp(52px, 8vw, 90px);
+  --text-h1--line-height: 0.9;
+  --text-h1--letter-spacing: -0.02em;
+
+  /* H1 героя маршрута */
+  --text-h1-hero: clamp(52px, 8vw, 120px);
+  --text-h1-hero--line-height: 0.85;
+  --text-h1-hero--letter-spacing: -0.01em;
+
+  /* H2 секции */
+  --text-h2: clamp(34px, 5.5vw, 64px);
+  --text-h2--line-height: 0.95;
+  --text-h2--letter-spacing: -0.02em;
+
+  /* H3 карточки */
+  --text-h3: clamp(38px, 4vw, 56px);
+  --text-h3--line-height: 1;
+
+  /* Лид-абзац (serif) */
+  --text-lead: clamp(26px, 3.5vw, 46px);
+  --text-lead--line-height: 1.22;
+
+  /* Цитата (serif) */
+  --text-quote: clamp(28px, 3.6vw, 46px);
+  --text-quote--line-height: 1.45;
+
+  /* Цена в блоке «Стоимость» */
+  --text-price: clamp(36px, 5.4vw, 80px);
+  --text-price--line-height: 1;
+
+  /* Заголовок слайда на главной */
+  --text-slide: clamp(28.5px, 2.86vw, 40.4px);
+  --text-slide--line-height: 1.1;
+
+  /* Основной текст */
+  --text-body: 17px;
+  --text-body--line-height: 1.65;
+
+  /* Мелкий текст / дисклеймеры */
+  --text-fine: 12px;
+  --text-fine--line-height: 1.5;
+
+  /* --- Радиусы ---------------------------------------------------------- */
+  --radius-base: 6px; /* дефолт по всему сайту */
+  --radius-card: 8px; /* карточки путешествий и отзывов */
+  --radius-pill: 40px; /* пилюля «Подробнее» */
+
+  /* --- Контейнеры ------------------------------------------------------- */
+  --container-page: 1280px; /* основной контейнер */
+  --container-narrow: 1000px; /* форма заявки, «Оргмоменты» */
+  --container-quote: 920px; /* цитата */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+  }
+
+  /* В референсе h1–h3 всегда Source Serif 4 с весом 500 */
+  h1,
+  h2,
+  h3 {
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    font-weight: 500;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-cream);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* --- Утилиты --------------------------------------------------------------
+   Повторяющиеся комбинации из макета. Всё остальное — обычными классами.
+   ------------------------------------------------------------------------ */
+
+/* Надзаголовок секции: моно, uppercase, accent */
+@utility eyebrow {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Моно-метка: даты, теги, цены, подписи */
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Кнопка-надпись: моно, uppercase, широкий трекинг */
+@utility mono-button {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Основной контейнер секции */
+@utility container-page {
+  margin-inline: auto;
+  max-width: var(--container-page);
+  padding-inline: 40px;
+}
+
+/* Горизонтальные слайдеры: скроллбар скрыт */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Градиент-оверлеи поверх фото */
+@utility overlay-hero {
+  background-image: linear-gradient(
+    180deg,
+    rgb(20 18 15 / 0) 0%,
+    rgb(20 18 15 / 0) 45%,
+    rgb(20 18 15 / 0.85) 100%
+  );
+}
+
+@utility overlay-card {
+  background-image: linear-gradient(
+    180deg,
+    rgb(15 13 11 / 0.55) 0%,
+    rgb(15 13 11 / 0.05) 34%,
+    rgb(15 13 11 / 0.15) 52%,
+    rgb(15 13 11 / 0.9) 100%
+  );
+}
+
+@utility overlay-home {
+  background-image: linear-gradient(
+    180deg,
+    rgb(20 18 15 / 0.5) 0%,
+    rgb(20 18 15 / 0.15) 40%,
+    rgb(20 18 15 / 0.82) 100%
+  );
+}
+
+/* Фолбэк для фото галереи, которых ещё нет */
+@utility photo-placeholder {
+  background-image: repeating-linear-gradient(135deg, #d8d2c4 0 20px, #cec7b6 20px 40px);
 }
