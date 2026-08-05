@@ -23,3 +23,7 @@ All code comments, documents, and READMEs are written in English, regardless of 
 
 - **Shared components** — used in more than one place, or clearly destined to be (e.g. a `Button`) — go in `src/components`.
 - **Page-only components** — used only on a single page — go next to that page, in a `_components` folder inside the page's own folder.
+
+## Utilities
+
+Shared helper functions (e.g. `cn`) go in `src/utils`, imported via the `@/utils/...` path alias.
