@@ -11,7 +11,7 @@ export function Footer() {
       <div className="max-w-page mx-auto grid grid-cols-[1fr_auto_1fr] items-start gap-8">
         <div>
           <Image
-            src="/assets/logo-handwritten-cream-trim.png"
+            src="/assets/logo-cream.png"
             alt={site.name}
             width={159}
             height={44}

@@ -8,7 +8,7 @@ export function Header() {
     <header className="sticky top-0 z-50 flex items-center justify-between px-10 py-3">
       <Link href="/" aria-label="Шаг за перевал — на главную">
         <Image
-          src="/assets/logo-handwritten-accent-B5623F.png"
+          src="/assets/logo-accent.png"
           alt="Шаг за перевал"
           width={130}
           height={36}
