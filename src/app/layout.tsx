@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Onest, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
-import { Nav } from "@/components/Nav";
+import { Header } from "@/components/Header";
 import "./globals.css";
 
 const onest = Onest({
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {/* Контент перекрывает футер и «уезжает» с него при скролле —
             футер прибит к низу вьюпорта и лежит ниже по z-оси. */}
         <div className="bg-bg relative z-10 flex min-h-dvh flex-col">
-          <Nav />
+          <Header />
           {children}
         </div>
         <div className="sticky bottom-0 z-0">
