@@ -27,3 +27,11 @@ All code comments, documents, and READMEs are written in English, regardless of 
 ## Utilities
 
 Shared helper functions (e.g. `cn`) go in `src/utils`, imported via the `@/utils/...` path alias.
+
+## Design system fidelity
+
+Prefer Tailwind's own scale (spacing, colors, `container`/`max-w`, font sizes, etc.) over custom tokens or arbitrary bracket values. We're not going for pixel-perfect fidelity to the design handoff — snap to the nearest value Tailwind already provides instead of reproducing an exact px/rem number. Only add a custom token when nothing in Tailwind's default scale is close enough.
+
+## Shared component props
+
+Every shared component (`src/components`) must accept a `className` prop and merge it with its own classes via `cn()`, so callers can override/extend styling from outside.
