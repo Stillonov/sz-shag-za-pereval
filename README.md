@@ -4,7 +4,7 @@ Website for Sergey Zharakhin's author-led tours: small groups, remote trails, an
 
 ## Stack
 
-- [Next.js](https://nextjs.org/) (App Router)
+- [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [ESLint](https://eslint.org/)
