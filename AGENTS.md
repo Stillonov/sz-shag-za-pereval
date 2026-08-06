@@ -36,6 +36,10 @@ Prefer Tailwind's own scale (spacing, colors, `container`/`max-w`, font sizes, e
 
 Every shared component (`src/components`) must accept a `className` prop and merge it with its own classes via `cn()`, so callers can override/extend styling from outside.
 
+## Prop types
+
+Type a component's props with `type ComponentNameProps = {...}`, not `interface`. `interface` allows declaration merging, which is more a risk than a feature for props; `type` also composes better with unions/intersections if a component grows variants.
+
 ## Naming variants
 
 - A component that is a variant of another component for a specific context is named with that component's name as a prefix — e.g. `Header` + `HeaderHome` (the home page's version of the header).

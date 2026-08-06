@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { Container } from '@/components/Container';
+import { HeaderMobileMenu } from '@/components/HeaderMobileMenu';
 import { Logo } from '@/components/Logo';
 import { Navigation } from '@/components/Navigation';
 
@@ -16,7 +17,8 @@ export function Header({ className }: HeaderProps) {
           <Logo />
         </Link>
 
-        <Navigation />
+        <Navigation className="hidden lg:flex" />
+        <HeaderMobileMenu />
       </Container>
     </header>
   );
