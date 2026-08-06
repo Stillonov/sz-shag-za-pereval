@@ -21,7 +21,7 @@ export function HeaderHome({ className }: HeaderHomeProps) {
           <Link
             key={link.href}
             href={link.href}
-            className="text-cream text-base font-semibold hover:underline hover:underline-offset-4"
+            className="text-cream text-base hover:underline hover:underline-offset-4"
           >
             {link.label}
           </Link>
