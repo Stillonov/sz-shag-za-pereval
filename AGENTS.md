@@ -35,3 +35,12 @@ Prefer Tailwind's own scale (spacing, colors, `container`/`max-w`, font sizes, e
 ## Shared component props
 
 Every shared component (`src/components`) must accept a `className` prop and merge it with its own classes via `cn()`, so callers can override/extend styling from outside.
+
+## Naming variants
+
+- A component that is a variant of another component for a specific context is named with that component's name as a prefix — e.g. `Header` + `HeaderHome` (the home page's version of the header).
+
+## Naming subcomponents
+
+- A component that's a building block used exclusively by one other component is also named with that component's name as a prefix — e.g. `Header` + `HeaderElement`.
+- Only apply the prefix once a piece is confirmed to belong exclusively to that component; don't prefix (or rename) something that's still plausibly reusable elsewhere (e.g. `Navigation` isn't `HeaderNavigation` yet — it may end up shared with the footer).
