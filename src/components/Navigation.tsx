@@ -3,13 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { navLinks } from '@/content/site';
 import { cn } from '@/utils/cn';
-
-const NAV_LINKS = [
-  { href: '/', label: 'Главная' },
-  { href: '/trips', label: 'Путешествия' },
-  { href: '/contacts', label: 'Контакты' },
-];
 
 type NavigationProps = {
   className?: string;
@@ -20,7 +15,7 @@ export function Navigation({ className }: NavigationProps) {
 
   return (
     <nav className={cn('flex items-center gap-8 font-sans text-base', className)}>
-      {NAV_LINKS.map((link) => {
+      {navLinks.map((link) => {
         const isActive = pathname === link.href;
 
         return (
