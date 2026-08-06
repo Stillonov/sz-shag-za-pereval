@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Container } from "@/components/Container";
-import { Logo } from "@/components/Logo";
-import { Navigation } from "@/components/Navigation";
+import { Container } from '@/components/Container';
+import { Logo } from '@/components/Logo';
+import { Navigation } from '@/components/Navigation';
 
 type HeaderProps = {
   className?: string;

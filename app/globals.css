@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --color-cream: oklch(94.73% 0.0144 84.58); /* #f2ede3 */

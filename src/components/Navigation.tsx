@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-import { cn } from "@/utils/cn";
+import { cn } from '@/utils/cn';
 
 const NAV_LINKS = [
-  { href: "/", label: "Главная" },
-  { href: "/trips", label: "Путешествия" },
-  { href: "/contacts", label: "Контакты" },
+  { href: '/', label: 'Главная' },
+  { href: '/trips', label: 'Путешествия' },
+  { href: '/contacts', label: 'Контакты' },
 ];
 
 type NavigationProps = {
@@ -19,7 +19,7 @@ export function Navigation({ className }: NavigationProps) {
   const pathname = usePathname();
 
   return (
-    <nav className={cn("flex items-center gap-8 font-sans text-base", className)}>
+    <nav className={cn('flex items-center gap-8 font-sans text-base', className)}>
       {NAV_LINKS.map((link) => {
         const isActive = pathname === link.href;
 
@@ -27,12 +27,12 @@ export function Navigation({ className }: NavigationProps) {
           <Link
             key={link.href}
             href={link.href}
-            aria-current={isActive ? "page" : undefined}
+            aria-current={isActive ? 'page' : undefined}
             className={cn(
-              "text-charcoal",
+              'text-charcoal',
               isActive
-                ? "underline underline-offset-4"
-                : "opacity-75 hover:underline hover:underline-offset-4",
+                ? 'underline underline-offset-4'
+                : 'opacity-75 hover:underline hover:underline-offset-4',
             )}
           >
             {link.label}
