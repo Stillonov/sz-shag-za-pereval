@@ -3,6 +3,8 @@ import { JetBrains_Mono, Onest, Source_Serif_4 } from 'next/font/google';
 
 import './globals.css';
 
+import { Footer } from '@/components/Footer';
+
 const onest = Onest({
   variable: '--font-onest',
   subsets: ['latin', 'cyrillic'],
@@ -40,7 +42,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       lang="ru"
       className={`${onest.variable} ${sourceSerif4.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
