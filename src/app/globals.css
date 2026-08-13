@@ -9,11 +9,13 @@
   --color-ash: oklch(61.21% 0.0222 84.59); /* #8a8375 */
   --color-terracotta: oklch(58.55% 0.118 42.9); /* #b5623f */
 
-  /* INFO: cream tinted toward charcoal, for muted text/borders on dark (charcoal) backgrounds. */
-  --color-cream-muted: oklch(75.9% 0.0126 79.77); /* #b5b0a8 */
-  --color-cream-faint: oklch(66.1% 0.0126 84.59); /* #96928a */
-  --color-cream-subtle: oklch(55.81% 0.011 72.58); /* #78736d */
-  --color-cream-hairline: oklch(37.51% 0.0096 61.21); /* #45403c */
+  /* INFO: cream tinted toward charcoal, for text/borders on dark (charcoal) backgrounds.
+     Numbered like Tailwind's own scale (bigger number = darker); only the steps we
+     actually use are defined, not the full 50-950 run. */
+  --color-cream-400: oklch(75.9% 0.0126 79.77); /* #b5b0a8 */
+  --color-cream-500: oklch(66.1% 0.0126 84.59); /* #96928a */
+  --color-cream-600: oklch(55.81% 0.011 72.58); /* #78736d */
+  --color-cream-800: oklch(37.51% 0.0096 61.21); /* #45403c */
 }
 
 @theme inline {
@@ -29,10 +31,10 @@
   --color-ash: var(--color-ash);
   --color-terracotta: var(--color-terracotta);
 
-  --color-cream-muted: var(--color-cream-muted);
-  --color-cream-faint: var(--color-cream-faint);
-  --color-cream-subtle: var(--color-cream-subtle);
-  --color-cream-hairline: var(--color-cream-hairline);
+  --color-cream-400: var(--color-cream-400);
+  --color-cream-500: var(--color-cream-500);
+  --color-cream-600: var(--color-cream-600);
+  --color-cream-800: var(--color-cream-800);
 }
 
 body {

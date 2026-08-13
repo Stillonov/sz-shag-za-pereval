@@ -15,13 +15,13 @@ export function Footer({ className }: FooterProps) {
       <Container className="flex flex-col items-center gap-10 md:flex-row md:items-start md:justify-between">
         <div>
           <Logo variant="cream" />
-          <p className="text-cream-faint mt-2.5 font-sans text-xs">Бюро горных экспедиций</p>
+          <p className="text-cream-500 mt-2.5 font-sans text-xs">Бюро горных экспедиций</p>
         </div>
 
         <Navigation variant="cream" />
 
         <div className="flex flex-col items-center gap-3.5 md:items-end">
-          <div className="text-cream-muted text-center font-mono text-sm leading-relaxed md:text-right">
+          <div className="text-cream-400 text-center font-mono text-sm leading-relaxed md:text-right">
             <a
               href={`mailto:${siteContact.email}`}
               className="block hover:underline hover:underline-offset-4"
@@ -40,7 +40,7 @@ export function Footer({ className }: FooterProps) {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-cream-muted hover:underline hover:underline-offset-4"
+                className="text-cream-400 hover:underline hover:underline-offset-4"
               >
                 {link.label}
               </a>
@@ -49,7 +49,7 @@ export function Footer({ className }: FooterProps) {
         </div>
       </Container>
 
-      <Container className="border-cream-hairline text-cream-subtle mt-10 border-t pt-6 font-mono text-xs tracking-wider">
+      <Container className="border-cream-800 text-cream-600 mt-10 border-t pt-6 font-mono text-xs tracking-wider">
         <span>© {new Date().getFullYear()} Шаг за перевал · Все права защищены</span>
       </Container>
     </footer>
