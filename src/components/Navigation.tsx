@@ -20,7 +20,7 @@ export function Navigation({ className, variant = 'charcoal' }: NavigationProps)
         const isActive = pathname === link.href;
 
         const activeColor = variant === 'charcoal' ? 'text-charcoal' : 'text-cream-100';
-        const inactiveColor = variant === 'charcoal' ? 'text-taupe' : 'text-ash';
+        const inactiveColor = variant === 'charcoal' ? 'text-taupe' : 'text-cream-400';
 
         return (
           <Link

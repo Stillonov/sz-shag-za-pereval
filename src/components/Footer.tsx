@@ -11,17 +11,17 @@ type FooterProps = {
 
 export function Footer({ className }: FooterProps) {
   return (
-    <footer className={cn('bg-charcoal pt-20 pb-10', className)}>
+    <footer className={cn('bg-charcoal text-cream-400 pt-20 pb-10', className)}>
       <Container className="flex flex-col items-center gap-10 md:flex-row md:items-start md:justify-between">
         <div>
           <Logo variant="cream" />
-          <p className="text-cream-500 mt-2.5 font-sans text-xs">Бюро горных экспедиций</p>
+          <p className="mt-2.5 text-xs">Бюро горных экспедиций</p>
         </div>
 
         <Navigation variant="cream" />
 
         <div className="flex flex-col items-center gap-3.5 md:items-end">
-          <div className="text-cream-400 text-center font-mono text-sm leading-relaxed md:text-right">
+          <div className="text-center font-mono text-sm leading-relaxed md:text-right">
             <a
               href={`mailto:${siteContact.email}`}
               className="block hover:underline hover:underline-offset-4"
@@ -40,7 +40,7 @@ export function Footer({ className }: FooterProps) {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-cream-400 hover:underline hover:underline-offset-4"
+                className="hover:underline hover:underline-offset-4"
               >
                 {link.label}
               </a>
