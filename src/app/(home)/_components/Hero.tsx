@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { Logo } from '@/components/Logo';
 
+import { siteTagline } from '@/content/site';
 import { trips } from '@/content/trips';
 import { cn } from '@/utils/cn';
 
@@ -48,7 +49,6 @@ export function Hero() {
               <Link
                 href={`/trips/${trip.slug}`}
                 aria-label={trip.title}
-                title="Смотреть тур"
                 tabIndex={index === selectedIndex ? undefined : -1}
                 aria-hidden={index !== selectedIndex}
                 className={cn(
@@ -65,7 +65,7 @@ export function Hero() {
 
       <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-4 text-center">
         <Logo variant="cream" className="mx-auto h-auto w-full max-w-xl md:max-w-4xl" />
-        <p className="text-cream-100 mt-4 text-xl">Бюро горных экспедиций</p>
+        <p className="text-cream-100 mt-4 text-xl">{siteTagline}</p>
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-24 z-10 flex flex-col items-center gap-4 px-4 text-center">

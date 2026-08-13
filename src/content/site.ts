@@ -1,3 +1,5 @@
+export const siteTagline = 'Бюро горных экспедиций';
+
 export const navLinks = [
   { href: '/', label: 'Главная' },
   { href: '/trips', label: 'Путешествия' },

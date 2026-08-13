@@ -1,12 +1,11 @@
 import { Container } from '@/components/Container';
+import { SectionLabel } from '@/components/SectionLabel';
 
 export function Manifest() {
   return (
     <section className="py-24">
       <Container>
-        <p className="text-terracotta mb-6 font-mono text-base font-bold tracking-widest uppercase">
-          О нас
-        </p>
+        <SectionLabel className="mb-6">О нас</SectionLabel>
         <h2 className="max-w-2xl font-serif text-3xl leading-tight font-medium text-balance md:text-5xl">
           Мы не про услуги — мы про команду, приключение и характер.
         </h2>

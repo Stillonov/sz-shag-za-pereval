@@ -2,7 +2,7 @@ import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
 import { Navigation } from '@/components/Navigation';
 
-import { siteContact, socialLinks } from '@/content/site';
+import { siteContact, siteTagline, socialLinks } from '@/content/site';
 import { cn } from '@/utils/cn';
 
 type FooterProps = {
@@ -15,7 +15,7 @@ export function Footer({ className }: FooterProps) {
       <Container className="flex flex-col items-center gap-10 md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col items-center">
           <Logo variant="cream" />
-          <p className="mt-2.5 text-xs">Бюро горных экспедиций</p>
+          <p className="mt-2.5 text-xs">{siteTagline}</p>
         </div>
 
         <Navigation variant="dark" />
