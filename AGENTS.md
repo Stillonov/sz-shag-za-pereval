@@ -10,6 +10,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Project Conventions
 
+## Git
+
+Never run `git commit` or `git push` unless explicitly asked to, in that specific instance. Finishing a change does not imply permission to commit it — always ask first.
+
 ## Language
 
 All code comments, documents, and READMEs are written in English, regardless of the language of the resource's own content (e.g. UI copy).
