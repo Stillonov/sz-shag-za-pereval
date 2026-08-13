@@ -50,7 +50,7 @@ export function Footer({ className }: FooterProps) {
       </Container>
 
       <Container className="border-cream-800 text-cream-600 mt-10 border-t pt-6 text-center font-mono text-xs tracking-wider md:text-left">
-        <span>© {new Date().getFullYear()} Шаг за перевал · Все права защищены</span>
+        <span>&copy; {new Date().getFullYear()} Шаг за перевал · Все права защищены</span>
       </Container>
     </footer>
   );
