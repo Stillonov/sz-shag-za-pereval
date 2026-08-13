@@ -9,6 +9,8 @@
   --color-terracotta: oklch(58.55% 0.118 42.9); /* #b5623f */
 
   --color-cream-100: oklch(94.73% 0.0144 84.58); /* #f2ede3 */
+  --color-cream-200: oklch(88.9% 0.0136 84.59); /* #e0dbd1 */
+  --color-cream-300: oklch(82.1% 0.0126 79.77); /* #d1c9be */
   --color-cream-400: oklch(75.9% 0.0126 79.77); /* #b5b0a8 */
   --color-cream-500: oklch(66.1% 0.0126 84.59); /* #96928a */
   --color-cream-600: oklch(55.81% 0.011 72.58); /* #78736d */
@@ -28,6 +30,8 @@
   --color-terracotta: var(--color-terracotta);
 
   --color-cream-100: var(--color-cream-100);
+  --color-cream-200: var(--color-cream-200);
+  --color-cream-300: var(--color-cream-300);
   --color-cream-400: var(--color-cream-400);
   --color-cream-500: var(--color-cream-500);
   --color-cream-600: var(--color-cream-600);
