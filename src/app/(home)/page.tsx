@@ -1,3 +1,4 @@
+import { Cta } from './_components/Cta';
 import { Hero } from './_components/Hero';
 import { Manifest } from './_components/Manifest';
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Hero />
       <Manifest />
+      <Cta />
     </>
   );
 }

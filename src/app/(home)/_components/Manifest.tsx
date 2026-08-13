@@ -10,12 +10,12 @@ export function Manifest() {
           Мы не про услуги — мы про команду, приключение и характер.
         </h2>
         <div className="mt-14 flex max-w-3xl flex-col gap-5">
-          <p className="text-taupe text-lg leading-relaxed">
+          <p className="text-taupe text-base leading-relaxed md:text-lg">
             С 2016 года мы водим небольшие группы в горы — от Кавказа до Алтая и Памира. За это
             время через наши маршруты прошли сотни путешественников, и мы каждый раз собираем поход
             заново: под маршрут, сезон и людей, а не по шаблону.
           </p>
-          <p className="text-taupe text-lg leading-relaxed">
+          <p className="text-taupe text-base leading-relaxed md:text-lg">
             Группы у нас небольшие, гиды — опытные, а подход честный: если поход не состоится по
             нашей вине, мы вернём деньги полностью. Для нас горы — это не услуга, а общее дело с
             теми, кто идёт рядом.

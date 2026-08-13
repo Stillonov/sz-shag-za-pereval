@@ -8,5 +8,5 @@ export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
 
   if (!trip) notFound();
 
-  return <p className="font-sans text-lg">{trip.title}</p>;
+  return <p className="font-sans text-base md:text-lg">{trip.title}</p>;
 }
