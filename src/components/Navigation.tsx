@@ -19,7 +19,7 @@ export function Navigation({ className, variant = 'charcoal' }: NavigationProps)
       {navLinks.map((link) => {
         const isActive = pathname === link.href;
 
-        const activeColor = variant === 'charcoal' ? 'text-charcoal' : 'text-cream';
+        const activeColor = variant === 'charcoal' ? 'text-charcoal' : 'text-cream-100';
         const inactiveColor = variant === 'charcoal' ? 'text-taupe' : 'text-ash';
 
         return (

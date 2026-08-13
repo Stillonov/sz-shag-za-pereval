@@ -24,7 +24,7 @@ export function HeaderMobileMenu() {
       <div
         id={MENU_ID}
         popover="auto"
-        className="bg-cream inset-0 m-0 hidden h-full max-h-none w-full max-w-none flex-col [&:popover-open]:flex"
+        className="bg-cream-100 inset-0 m-0 hidden h-full max-h-none w-full max-w-none flex-col [&:popover-open]:flex"
       >
         <Container fullWidth className="flex min-h-17 items-center justify-end py-3">
           <button
