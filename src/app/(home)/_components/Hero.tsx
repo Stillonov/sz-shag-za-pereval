@@ -13,7 +13,7 @@ import { trips } from '@/content/trips';
 import { cn } from '@/utils/cn';
 
 export function Hero() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 200 }, [
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 200, watchDrag: false }, [
     Fade(),
     Autoplay({ delay: 6000 }),
   ]);
