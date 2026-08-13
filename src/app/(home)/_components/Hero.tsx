@@ -34,6 +34,8 @@ export function Hero() {
 
   return (
     <section className="relative min-h-dvh overflow-hidden">
+      <h1 className="sr-only">Шаг за перевал</h1>
+
       <div className="absolute inset-0" ref={emblaRef}>
         <div className="flex h-full">
           {trips.map((trip, index) => (
@@ -59,9 +61,9 @@ export function Hero() {
       </div>
 
       <div className="absolute inset-x-0 bottom-24 z-10 flex flex-col items-center gap-4 px-4 text-center">
-        <h3 className="text-cream-100 font-serif text-3xl font-semibold md:text-5xl">
+        <h2 className="text-cream-100 font-serif text-3xl font-semibold md:text-5xl">
           {activeTrip.title}
-        </h3>
+        </h2>
         <span className="text-cream-300 font-mono text-sm font-bold tracking-widest uppercase">
           {activeTrip.dates}
         </span>
