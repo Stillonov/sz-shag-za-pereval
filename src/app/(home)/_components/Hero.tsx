@@ -1,46 +1,42 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Autoplay from 'embla-carousel-autoplay';
-import Fade from 'embla-carousel-fade';
-import useEmblaCarousel from 'embla-carousel-react';
 
 import { Logo } from '@/components/Logo';
 
 import { trips } from '@/content/trips';
 import { cn } from '@/utils/cn';
 
+const AUTOPLAY_DELAY = 6000;
+
 export function Hero() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 200, watchDrag: false }, [
-    Fade(),
-    Autoplay({ delay: 6000 }),
-  ]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const onSelect = useCallback(() => {
-    if (emblaApi) setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
   useEffect(() => {
-    if (!emblaApi) return;
-    emblaApi.on('select', onSelect);
-    return () => {
-      emblaApi.off('select', onSelect);
-    };
-  }, [emblaApi, onSelect]);
+    const id = setInterval(() => {
+      setSelectedIndex((current) => (current + 1) % trips.length);
+    }, AUTOPLAY_DELAY);
+    return () => clearInterval(id);
+  }, []);
 
   const activeTrip = trips[selectedIndex];
 
   return (
-    <section className="relative min-h-dvh overflow-hidden">
+    <section className="bg-charcoal relative min-h-dvh overflow-hidden">
       <h1 className="sr-only">Шаг за перевал</h1>
 
-      <div className="absolute inset-0" ref={emblaRef}>
-        <div className="flex h-full">
+      <div className="absolute inset-0">
+        <div className="relative h-full">
           {trips.map((trip, index) => (
-            <div key={trip.title} className="relative h-full min-w-0 flex-[0_0_100%]">
+            <div
+              key={trip.title}
+              className={cn(
+                'absolute inset-0 transition-opacity duration-1000',
+                index === selectedIndex ? 'opacity-100' : 'opacity-0',
+              )}
+            >
               <Image
                 src={trip.photo}
                 alt={trip.title}
@@ -86,7 +82,7 @@ export function Hero() {
           <span
             key={trip.title}
             className={cn(
-              'h-2 rounded-full transition-all duration-400',
+              'h-2 rounded-full transition-all duration-500',
               index === selectedIndex ? 'bg-cream-100 w-8' : 'bg-cream-400 w-2',
             )}
           />
