@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Autoplay from 'embla-carousel-autoplay';
 import Fade from 'embla-carousel-fade';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -48,19 +49,30 @@ export function Hero() {
                 sizes="100vw"
                 className="object-cover"
               />
+              <Link
+                href={`/trips/${trip.slug}`}
+                aria-label={trip.title}
+                title="Смотреть тур"
+                tabIndex={index === selectedIndex ? undefined : -1}
+                aria-hidden={index !== selectedIndex}
+                className={cn(
+                  'absolute inset-0 z-10',
+                  index !== selectedIndex && 'pointer-events-none',
+                )}
+              />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,color-mix(in_oklch,var(--color-charcoal)_30%,transparent)_0%,transparent_25%,transparent_75%,color-mix(in_oklch,var(--color-charcoal)_30%,transparent)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,color-mix(in_oklch,var(--color-charcoal)_30%,transparent)_0%,transparent_25%,transparent_75%,color-mix(in_oklch,var(--color-charcoal)_30%,transparent)_100%)]" />
 
-      <div className="absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-4 text-center">
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-4 text-center">
         <Logo variant="cream" className="mx-auto h-auto w-full max-w-xl md:max-w-4xl" />
         <p className="text-cream-100 mt-4 text-xl">Бюро горных экспедиций</p>
       </div>
 
-      <div className="absolute inset-x-0 bottom-24 z-10 flex flex-col items-center gap-4 px-4 text-center">
+      <div className="pointer-events-none absolute inset-x-0 bottom-24 z-10 flex flex-col items-center gap-4 px-4 text-center">
         <h2 className="text-cream-100 font-serif text-3xl font-semibold md:text-5xl">
           {activeTrip.title}
         </h2>
@@ -69,13 +81,10 @@ export function Hero() {
         </span>
       </div>
 
-      <div className="absolute inset-x-0 bottom-14 z-10 flex justify-center gap-3">
+      <div className="pointer-events-none absolute inset-x-0 bottom-14 z-10 flex justify-center gap-3">
         {trips.map((trip, index) => (
-          <button
+          <span
             key={trip.title}
-            type="button"
-            aria-label={`Показать «${trip.title}»`}
-            onClick={() => emblaApi?.scrollTo(index)}
             className={cn(
               'h-2 rounded-full transition-all duration-400',
               index === selectedIndex ? 'bg-cream-100 w-8' : 'bg-cream-400 w-2',
