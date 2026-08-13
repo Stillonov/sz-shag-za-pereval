@@ -8,9 +8,10 @@ import { cn } from '@/utils/cn';
 
 type NavigationProps = {
   className?: string;
+  variant?: 'charcoal' | 'cream';
 };
 
-export function Navigation({ className }: NavigationProps) {
+export function Navigation({ className, variant = 'charcoal' }: NavigationProps) {
   const pathname = usePathname();
 
   return (
@@ -24,7 +25,7 @@ export function Navigation({ className }: NavigationProps) {
             href={link.href}
             aria-current={isActive ? 'page' : undefined}
             className={cn(
-              'text-charcoal',
+              variant === 'charcoal' ? 'text-charcoal' : 'text-cream',
               isActive
                 ? 'underline underline-offset-4'
                 : 'opacity-75 hover:underline hover:underline-offset-4',
