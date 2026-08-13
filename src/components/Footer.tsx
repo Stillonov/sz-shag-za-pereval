@@ -13,7 +13,7 @@ export function Footer({ className }: FooterProps) {
   return (
     <footer className={cn('bg-charcoal text-cream-400 pt-20 pb-10', className)}>
       <Container className="flex flex-col items-center gap-10 md:flex-row md:items-start md:justify-between">
-        <div>
+        <div className="flex flex-col items-center">
           <Logo variant="cream" />
           <p className="mt-2.5 text-xs">Бюро горных экспедиций</p>
         </div>
@@ -49,7 +49,7 @@ export function Footer({ className }: FooterProps) {
         </div>
       </Container>
 
-      <Container className="border-cream-800 text-cream-600 mt-10 border-t pt-6 font-mono text-xs tracking-wider">
+      <Container className="border-cream-800 text-cream-600 mt-10 border-t pt-6 text-center font-mono text-xs tracking-wider md:text-left">
         <span>© {new Date().getFullYear()} Шаг за перевал · Все права защищены</span>
       </Container>
     </footer>
