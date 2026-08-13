@@ -19,16 +19,18 @@ export function Navigation({ className, variant = 'charcoal' }: NavigationProps)
       {navLinks.map((link) => {
         const isActive = pathname === link.href;
 
+        const activeColor = variant === 'charcoal' ? 'text-charcoal' : 'text-cream';
+        const inactiveColor = variant === 'charcoal' ? 'text-taupe' : 'text-ash';
+
         return (
           <Link
             key={link.href}
             href={link.href}
             aria-current={isActive ? 'page' : undefined}
             className={cn(
-              variant === 'charcoal' ? 'text-charcoal' : 'text-cream',
               isActive
-                ? 'underline underline-offset-4'
-                : 'opacity-75 hover:underline hover:underline-offset-4',
+                ? `${activeColor} underline underline-offset-4`
+                : `${inactiveColor} hover:underline hover:underline-offset-4`,
             )}
           >
             {link.label}
