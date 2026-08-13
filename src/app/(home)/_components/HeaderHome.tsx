@@ -13,7 +13,7 @@ type HeaderHomeProps = {
 
 export function HeaderHome({ className }: HeaderHomeProps) {
   return (
-    <header className={cn('absolute inset-x-0 top-0 z-10', className)}>
+    <header className={cn('absolute inset-x-0 top-0 z-20', className)}>
       <Container fullWidth className="flex min-h-17 items-center justify-end gap-8 py-3">
         {links.map((link) => (
           <Link

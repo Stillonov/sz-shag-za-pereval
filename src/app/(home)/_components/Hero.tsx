@@ -63,7 +63,7 @@ export function Hero() {
 
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,color-mix(in_oklch,var(--color-charcoal)_30%,transparent)_0%,transparent_25%,transparent_75%,color-mix(in_oklch,var(--color-charcoal)_30%,transparent)_100%)]" />
 
-      <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-4 text-center">
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-6 text-center md:px-12">
         <Logo variant="cream" className="mx-auto h-auto w-full max-w-xl md:max-w-4xl" />
         <p className="text-cream-100 mt-4 text-xl">{siteTagline}</p>
       </div>
