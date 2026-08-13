@@ -18,7 +18,7 @@ export function Footer({ className }: FooterProps) {
           <p className="mt-2.5 text-xs">Бюро горных экспедиций</p>
         </div>
 
-        <Navigation variant="cream" />
+        <Navigation variant="dark" />
 
         <div className="flex flex-col items-center gap-3.5 md:items-end">
           <div className="text-center font-mono text-sm leading-relaxed md:text-right">

@@ -8,10 +8,10 @@ import { cn } from '@/utils/cn';
 
 type NavigationProps = {
   className?: string;
-  variant?: 'charcoal' | 'cream';
+  variant?: 'light' | 'dark';
 };
 
-export function Navigation({ className, variant = 'charcoal' }: NavigationProps) {
+export function Navigation({ className, variant = 'light' }: NavigationProps) {
   const pathname = usePathname();
 
   return (
@@ -19,8 +19,8 @@ export function Navigation({ className, variant = 'charcoal' }: NavigationProps)
       {navLinks.map((link) => {
         const isActive = pathname === link.href;
 
-        const activeColor = variant === 'charcoal' ? 'text-charcoal' : 'text-cream-100';
-        const inactiveColor = variant === 'charcoal' ? 'text-taupe' : 'text-cream-400';
+        const activeColor = variant === 'light' ? 'text-charcoal' : 'text-cream-100';
+        const inactiveColor = variant === 'light' ? 'text-taupe' : 'text-cream-400';
 
         return (
           <Link
