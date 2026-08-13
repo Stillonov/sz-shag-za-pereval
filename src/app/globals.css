@@ -8,6 +8,12 @@
   --color-walnut: oklch(33.15% 0.0154 79.63); /* #3a352d */
   --color-ash: oklch(61.21% 0.0222 84.59); /* #8a8375 */
   --color-terracotta: oklch(58.55% 0.118 42.9); /* #b5623f */
+
+  /* INFO: cream tinted toward charcoal, for muted text/borders on dark (charcoal) backgrounds. */
+  --color-cream-muted: oklch(75.9% 0.0126 79.77); /* #b5b0a8 */
+  --color-cream-faint: oklch(66.1% 0.0126 84.59); /* #96928a */
+  --color-cream-subtle: oklch(55.81% 0.011 72.58); /* #78736d */
+  --color-cream-hairline: oklch(37.51% 0.0096 61.21); /* #45403c */
 }
 
 @theme inline {
@@ -22,6 +28,11 @@
   --color-walnut: var(--color-walnut);
   --color-ash: var(--color-ash);
   --color-terracotta: var(--color-terracotta);
+
+  --color-cream-muted: var(--color-cream-muted);
+  --color-cream-faint: var(--color-cream-faint);
+  --color-cream-subtle: var(--color-cream-subtle);
+  --color-cream-hairline: var(--color-cream-hairline);
 }
 
 body {
