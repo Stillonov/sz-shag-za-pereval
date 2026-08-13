@@ -36,6 +36,10 @@ Shared helper functions (e.g. `cn`) go in `src/utils`, imported via the `@/utils
 
 Prefer Tailwind's own scale (spacing, colors, `container`/`max-w`, font sizes, etc.) over custom tokens or arbitrary bracket values. We're not going for pixel-perfect fidelity to the design handoff — snap to the nearest value Tailwind already provides instead of reproducing an exact px/rem number. Only add a custom token when nothing in Tailwind's default scale is close enough.
 
+## Design system reference
+
+[`DESIGN.md`](DESIGN.md) (repo root, [format spec](https://github.com/google-labs-code/design.md)) documents the actual design system — colors, typography, layout, shapes, component patterns, do's/don'ts. It's a living document: whenever a change adds/renames/removes a design token (a color in `globals.css`, a font, a spacing/rounded override) or introduces a new reusable visual pattern, update `DESIGN.md` in the same change. Keep it reflecting what the code actually does, not aspirational — don't document a token or pattern that isn't in use yet.
+
 ## Shared component props
 
 Every shared component (`src/components`) must accept a `className` prop and merge it with its own classes via `cn()`, so callers can override/extend styling from outside.
