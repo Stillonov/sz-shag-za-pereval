@@ -6,7 +6,7 @@ export function Cta() {
   return (
     <section className="bg-charcoal py-28">
       <Container className="max-w-4xl text-center">
-        <h2 className="text-cream-100 font-serif text-4xl leading-none font-medium tracking-tight md:text-6xl">
+        <h2 className="text-cream-100 font-serif text-4xl leading-none font-medium md:text-6xl">
           Готовы к приключениям?
         </h2>
         <p className="text-cream-400 mx-auto mt-6 max-w-lg text-base leading-relaxed md:text-lg">
