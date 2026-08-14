@@ -23,7 +23,7 @@ export function Hero({ trip }: HeroProps) {
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,transparent_45%,color-mix(in_oklch,var(--color-charcoal)_85%,transparent)_100%)]" />
 
-      <Container fullWidth className="relative z-10 pb-20">
+      <Container fullWidth className="relative z-10 pb-14">
         <div className="flex flex-wrap gap-2.5">
           <Badge>{trip.hero.dates}</Badge>
           <Badge variant="charcoal">{trip.hero.format}</Badge>
