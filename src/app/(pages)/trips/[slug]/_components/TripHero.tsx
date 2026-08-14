@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Badge } from '@/components/Badge';
 import { Container } from '@/components/Container';
 
 import type { TripDetail } from '@/content/tripDetails';
@@ -24,12 +25,8 @@ export function TripHero({ trip }: TripHeroProps) {
 
       <Container fullWidth className="relative z-10 pb-20">
         <div className="flex flex-wrap gap-2.5">
-          <span className="bg-terracotta text-cream-100 rounded-md px-3 py-1.5 font-mono text-xs font-bold tracking-wider uppercase">
-            {trip.dates}
-          </span>
-          <span className="bg-charcoal text-cream-100 rounded-md px-3 py-1.5 font-mono text-xs font-bold tracking-wider uppercase">
-            {trip.format}
-          </span>
+          <Badge>{trip.dates}</Badge>
+          <Badge variant="charcoal">{trip.format}</Badge>
         </div>
 
         <h1 className="text-cream-100 mt-5 w-1/2 font-serif text-5xl font-medium text-balance md:text-8xl">

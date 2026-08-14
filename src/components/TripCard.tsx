@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Badge } from '@/components/Badge';
+
 import type { Trip } from '@/content/trips';
 import { cn } from '@/utils/cn';
 
@@ -23,9 +25,7 @@ export function TripCard({ trip, className }: TripCardProps) {
         className="object-cover saturate-50 transition-all duration-700 ease-out group-hover:scale-110 group-hover:saturate-100"
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklch,var(--color-charcoal)_90%,transparent)_0%,color-mix(in_oklch,var(--color-charcoal)_10%,transparent)_45%,transparent_75%)]" />
-      <span className="bg-terracotta text-cream-100 absolute top-4 left-4 rounded-md px-3 py-1.5 font-mono text-xs font-bold tracking-wider uppercase">
-        {trip.region}
-      </span>
+      <Badge className="absolute top-4 left-4">{trip.region}</Badge>
       <div className="absolute inset-x-0 bottom-0 p-6">
         <h3 className="text-cream-100 font-serif text-3xl font-semibold md:text-4xl">
           {trip.title}

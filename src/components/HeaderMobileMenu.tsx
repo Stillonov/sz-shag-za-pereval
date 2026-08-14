@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useTransition, type MouseEvent } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { MenuIcon, XIcon } from 'lucide-react';
 
 import { Container } from '@/components/Container';
@@ -14,13 +14,14 @@ const MENU_ID = 'header-mobile-menu';
 
 type HeaderMobileMenuProps = {
   variant?: 'light' | 'dark';
+  className?: string;
 };
 
 // INFO: uses the native popover API — the browser handles open/close,
 // Escape, and outside-click for free. Nav links navigate via
 // startTransition so `isPending` tells us exactly when the new page has
 // rendered — the menu closes then, instead of guessing with a fixed delay.
-export function HeaderMobileMenu({ variant = 'light' }: HeaderMobileMenuProps) {
+export function HeaderMobileMenu({ variant = 'light', className }: HeaderMobileMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
@@ -43,7 +44,7 @@ export function HeaderMobileMenu({ variant = 'light' }: HeaderMobileMenuProps) {
   };
 
   return (
-    <div className="flex lg:hidden">
+    <div className={cn('flex lg:hidden', className)}>
       <button
         type="button"
         popoverTarget={MENU_ID}

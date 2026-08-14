@@ -50,6 +50,12 @@ Don't add a utility class whose only effect is the CSS default (e.g. `tracking-n
 
 Every shared component (`src/components`) must accept a `className` prop and merge it with its own classes via `cn()`, so callers can override/extend styling from outside.
 
+A shared component owns its *internal* styling (padding, its own colors/typography) but never its *external* spacing (margin, absolute-position offsets like `top-4 left-4`) or anything else that varies by where it's placed — that's the caller's responsibility, passed in via `className`. Don't bake a margin or position into the component just because every current usage happens to need the same one.
+
+## Prop order
+
+In both the `type ComponentNameProps` definition and the destructured function signature: content/required props first (`children`, domain data like `trip`), then optional variant/behavior props (`variant`, `fullWidth`, `muteInactive`), `className` always last.
+
 ## Prop types
 
 Type a component's props with `type ComponentNameProps = {...}`, not `interface`. `interface` allows declaration merging, which is more a risk than a feature for props; `type` also composes better with unions/intersections if a component grows variants.

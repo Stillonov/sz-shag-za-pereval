@@ -7,12 +7,12 @@ import { navLinks } from '@/content/site';
 import { cn } from '@/utils/cn';
 
 type NavigationProps = {
-  className?: string;
   variant?: 'light' | 'dark';
   muteInactive?: boolean;
+  className?: string;
 };
 
-export function Navigation({ className, variant = 'light', muteInactive = true }: NavigationProps) {
+export function Navigation({ variant = 'light', muteInactive = true, className }: NavigationProps) {
   const pathname = usePathname();
   const links = pathname === '/' ? navLinks.filter((link) => link.href !== '/') : navLinks;
 

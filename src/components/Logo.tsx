@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { cn } from '@/utils/cn';
 
 type LogoProps = {
-  className?: string;
   variant?: 'terracotta' | 'cream';
+  className?: string;
 };
 
-export function Logo({ className, variant = 'terracotta' }: LogoProps) {
+export function Logo({ variant = 'terracotta', className }: LogoProps) {
   return (
     <Image
       className={cn('h-9 w-auto', className)}
