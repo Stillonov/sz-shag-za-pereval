@@ -22,7 +22,7 @@ export function TripCard({ trip, className }: TripCardProps) {
         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         className="object-cover saturate-50 transition-all duration-700 ease-out group-hover:scale-110 group-hover:saturate-100"
       />
-      <div className="from-charcoal/90 via-charcoal/10 absolute inset-0 bg-linear-to-t to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklch,var(--color-charcoal)_90%,transparent)_0%,color-mix(in_oklch,var(--color-charcoal)_10%,transparent)_45%,transparent_75%)]" />
       <span className="bg-terracotta text-cream-100 absolute top-4 left-4 rounded-md px-3 py-1.5 font-mono text-xs font-bold tracking-wider uppercase">
         {trip.region}
       </span>
