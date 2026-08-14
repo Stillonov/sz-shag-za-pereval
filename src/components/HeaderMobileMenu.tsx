@@ -81,7 +81,7 @@ export function HeaderMobileMenu({ variant = 'light', className }: HeaderMobileM
               key={link.href}
               href={link.href}
               onClick={handleNavClick(link.href)}
-              className="text-charcoal font-serif text-4xl"
+              className="text-charcoal font-serif text-4xl hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-8"
             >
               {link.label}
             </Link>
