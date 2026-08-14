@@ -19,22 +19,46 @@ typography:
     fontFamily: Onest
     fontSize: 16px
     fontWeight: "400"
-    lineHeight: 24px
-  hero-title:
+    lineHeight: 1.625
+  lead-tagline:
+    fontFamily: Source Serif 4
+    fontSize: 30px
+    fontWeight: "500"
+    lineHeight: 1.25
+  big-h2:
+    fontFamily: Source Serif 4
+    fontSize: 36px
+    fontWeight: "500"
+  page-h1:
+    fontFamily: Source Serif 4
+    fontSize: 48px
+    fontWeight: "500"
+  trip-title:
     fontFamily: Source Serif 4
     fontSize: 30px
     fontWeight: "600"
-    lineHeight: 1
   mobile-nav-link:
     fontFamily: Source Serif 4
     fontSize: 36px
     fontWeight: "400"
+  review-quote:
+    fontFamily: Source Serif 4
+    fontSize: 20px
+    fontWeight: "500"
+    lineHeight: 1.5
   label-mono:
+    fontFamily: JetBrains Mono
+    fontSize: 16px
+    fontWeight: "700"
+    letterSpacing: 0.1em
+  badge-mono:
     fontFamily: JetBrains Mono
     fontSize: 12px
     fontWeight: "700"
-    letterSpacing: 0.1em
+    letterSpacing: 0.05em
 rounded:
+  md: 6px
+  lg: 8px
   full: 9999px
 ---
 
