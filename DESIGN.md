@@ -50,7 +50,7 @@ typography:
     fontFamily: JetBrains Mono
     fontSize: 16px
     fontWeight: "700"
-    letterSpacing: 0.1em
+    letterSpacing: 0.05em
   badge-mono:
     fontFamily: JetBrains Mono
     fontSize: 12px
