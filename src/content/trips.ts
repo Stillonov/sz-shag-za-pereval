@@ -1,4 +1,5 @@
 export type Trip = {
+  id: number;
   slug: string;
   title: string;
   region: string;
@@ -7,9 +8,9 @@ export type Trip = {
   photo: string;
 };
 
-// TODO: placeholder trips, replace with the real lineup.
 export const trips: Trip[] = [
   {
+    id: 0,
     slug: 'severny-kavkaz',
     title: 'Северный Кавказ',
     region: 'Кавказ',
@@ -18,6 +19,7 @@ export const trips: Trip[] = [
     photo: '/assets/hero-1.jpg',
   },
   {
+    id: 1,
     slug: 'plato-bermamyt',
     title: 'Плато Бермамыт',
     region: 'Кавказ',
@@ -26,6 +28,7 @@ export const trips: Trip[] = [
     photo: '/assets/hero-2.jpg',
   },
   {
+    id: 2,
     slug: 'ledniki-dombaya',
     title: 'Ледники Домбая',
     region: 'Кавказ',

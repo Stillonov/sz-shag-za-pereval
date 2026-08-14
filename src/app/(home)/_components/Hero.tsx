@@ -32,7 +32,7 @@ export function Hero() {
         <div className="relative h-full">
           {trips.map((trip, index) => (
             <div
-              key={trip.title}
+              key={trip.id}
               className={cn(
                 'absolute inset-0 transition-opacity duration-1000',
                 index === selectedIndex ? 'opacity-100' : 'opacity-0',
@@ -80,7 +80,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-14 z-10 flex justify-center gap-3">
         {trips.map((trip, index) => (
           <span
-            key={trip.title}
+            key={trip.id}
             className={cn(
               'h-2 rounded-full transition-all duration-500',
               index === selectedIndex ? 'bg-cream-100 w-8' : 'bg-cream-400 w-2',

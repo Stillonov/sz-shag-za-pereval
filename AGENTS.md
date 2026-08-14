@@ -58,3 +58,7 @@ Type a component's props with `type ComponentNameProps = {...}`, not `interface`
 
 - A component that's a building block used exclusively by one other component is also named with that component's name as a prefix — e.g. `Header` + `HeaderElement`.
 - Only apply the prefix once a piece is confirmed to belong exclusively to that component; don't prefix (or rename) something that's still plausibly reusable elsewhere (e.g. `Navigation` isn't `HeaderNavigation` yet — it may end up shared with the footer).
+
+## Content array ids
+
+Every enumerable item in `src/content/*.ts` (trips, reviews, etc.) gets an `id: number`, assigned sequentially from `0` in source order. Use `id` as the React `key` when mapping over the array — not `title`/`slug`/`name`, which aren't guaranteed unique once real content replaces the placeholders. Placeholder content in `src/content/` doesn't need a `TODO:` comment explaining it's a placeholder — that's already the default assumption for everything there.

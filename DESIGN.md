@@ -40,58 +40,60 @@ rounded:
 
 ## Overview
 
-Сайт бюро горных экспедиций "Шаг за перевал" — тёплая, приглушённая палитра (кремовый/уголь/терракота), рукописный логотип, много воздуха и никакой пиксель-охоты за модными эффектами (теней, размытий, градиентов почти нет). Дизайн опирается на дефолтную шкалу Tailwind (spacing, rounded, font-size) везде, где это возможно — кастомные токены существуют только там, где стандартной шкалы Tailwind реально не хватило (см. `src/app/globals.css`).
+The site for the mountain expedition bureau "Шаг за перевал" ("A Step Over the Pass") — a warm, muted palette (cream/charcoal/terracotta), a handwritten logo, lots of breathing room, and no chasing trendy effects (shadows, blur, gradients are almost never used). The design leans on Tailwind's default scale (spacing, rounded, font-size) wherever possible — custom tokens exist only where Tailwind's default scale genuinely wasn't enough (see `src/app/globals.css`).
 
 ## Colors
 
-Палитра построена на паре "тёплый кремовый / тёмный уголь" плюс акцентный терракотовый.
+The palette is built on a "warm cream / dark charcoal" pair plus a terracotta accent.
 
-- **cream-100 … cream-800** — не изолированные оттенки, а одна шкала (тон `cream`, светлеет к 100, темнеет к 800). `cream-100` — основной фон светлых страниц и текст на тёмном; `cream-400/500/600/800` — приглушённый текст/бордеры на тёмном (`charcoal`) фоне вместо `opacity` (см. Do's and Don'ts).
-- **charcoal** — основной тёмный фон (Hero, Footer) и основной текст на светлом фоне.
-- **terracotta** — единственный яркий акцент; используется точечно (логотип на светлом фоне).
-- **sand / taupe / walnut / ash** — вспомогательные тона того же диапазона; `taupe`/`ash` сейчас используются как приглушённый текст навигации на светлом/тёмном фоне соответственно.
+- **cream-100 … cream-800** — not isolated shades but a single scale (the `cream` hue, lighter toward 100, darker toward 800). `cream-100` is the base background for light pages and the text color on dark backgrounds; `cream-400/500/600/800` are muted text/borders on a dark (`charcoal`) background instead of `opacity` (see Do's and Don'ts).
+- **charcoal** — the primary dark background (Hero, Footer) and the primary text color on light backgrounds.
+- **terracotta** — the single bright accent; used sparingly (logo on a light background).
+- **sand / taupe / walnut / ash** — supporting tones in the same range; `taupe`/`ash` are currently used as muted navigation text on light/dark backgrounds respectively (`ash` is also used as the muted mono label in `ReviewCard`), `sand` is the background of the review card in `ReviewCard`.
 
 ## Typography
 
-Три шрифта, три разные роли — не смешиваются внутри одного текстового блока:
+Three fonts, three distinct roles — never mixed within a single text block:
 
-- **Onest** (`font-sans`) — шрифт по умолчанию для всего UI (навигация, тело текста). Задан на `<body>`, поэтому не нужно указывать явно в большинстве компонентов. Тело текста адаптивное: `text-base` на мобиле, `md:text-lg` на десктопе.
-- **Source Serif 4** (`font-serif`) — только заголовки/крупный акцентный текст (заголовок тура в Hero, пункты мобильного меню).
-- **JetBrains Mono** (`font-mono`) — только для лейблов: даты, копирайт, соцссылки — всегда в паре с `uppercase` и увеличенным `tracking` (`wider`/`widest`).
+- **Onest** (`font-sans`) — the default font for all UI (navigation, body text). Set on `<body>`, so it doesn't need to be specified explicitly in most components. Body text is responsive: `text-base` on mobile, `md:text-lg` on desktop.
+- **Source Serif 4** (`font-serif`) — headings/large accent text only (the trip title in Hero, mobile menu items).
+- **JetBrains Mono** (`font-mono`) — labels only: dates, copyright, social links — always paired with `uppercase` and increased `tracking` (`wider`/`widest`).
 
 ## Layout
 
-Контейнер (`src/components/Container.tsx`) — `max-w-7xl` с адаптивным горизонтальным паддингом (`px-4 md:px-6 lg:px-10`); есть режим `fullWidth` без ограничения по ширине (используется в шапке/hero). Вертикальные и горизонтальные отступы — только из дефолтной шкалы Tailwind, кастомной шкалы spacing в проекте нет.
+The container (`src/components/Container.tsx`) — `max-w-7xl` with adaptive horizontal padding (`px-4 md:px-6 lg:px-10`); there's a `fullWidth` mode with no width cap (used in the header/hero). Vertical and horizontal spacing comes only from Tailwind's default scale — there's no custom spacing scale in the project.
 
-Секции на главной (кроме `Hero`, у которой своя полноэкранная вёрстка) — единый вертикальный ритм `py-24` (`Manifest`, `UpcomingTrips`, `Cta`).
+Home page sections (except `Hero`, which has its own full-screen layout) share a single vertical rhythm, `py-24` (`Manifest`, `UpcomingTrips`, `Reviews`, `Cta`).
 
 ## Elevation & Depth
 
-Плоский дизайн — теней, blur и глубины нигде не используется. Разделение секций — цветом фона (`charcoal` vs `cream-100`) и тонкой границей (`border-t` на `cream-800`), не тенью.
+Flat design — shadows, blur, and depth are never used anywhere. Sections are separated by background color (`charcoal` vs `cream-100`) and a thin border (`border-t` on `cream-800`), not by shadow.
 
 ## Shapes
 
-По умолчанию — острые углы, `rounded` почти не используется. Два осознанных исключения:
-- `rounded-full` — точки-индикаторы слайдера в Hero (пилюли/точки, не карточки).
-- `rounded-md`/`rounded-lg` — интерактивные контролы и фото-карточки: кнопка в Cta, бейдж региона и сама карточка в `TripCard` (`rounded-lg` — под фото, `rounded-md` — под мелкие элементы поверх фото, тот же радиус, что у кнопки).
+Sharp corners by default — `rounded` is barely used. Two deliberate exceptions:
+- `rounded-full` — the slider dot indicators in Hero, the circular prev/next buttons of the review carousel in `Reviews`.
+- `rounded-md`/`rounded-lg` — interactive controls and photo/content cards: the button in Cta, the region badge and the card itself in `TripCard`, the review card in `ReviewCard` (`rounded-lg` for photos/cards, `rounded-md` for small elements over a photo — the same radius as the button).
 
 ## Components
 
-- **Header / HeaderHome** — фиксированная высота (`min-h-17`), лого + навигация; на главной странице лого не дублируется (уже есть крупное в Hero), сама шапка прозрачная поверх фото.
-- **Navigation** — активная ссылка подчёркнута и в полном цвете (`charcoal`/`cream-100`), неактивная — в приглушённом сплошном цвете (`taupe`/`cream-400`), **не** через `opacity`.
-- **Footer** — тёмная (`charcoal`) секция; та же логика приглушённого текста через `cream-400/500/600/800`, никогда через `opacity`.
-- **Hero** — полноэкранная секция с кросс-фейдом фото туров (`opacity`-переход по таймеру), центральный логотип, затемняющий градиент только в нижней половине кадра для читаемости текста снизу.
-- **Manifest** — секция «О нас» на главной: mono-лейбл (`О нас`), крупный serif-слоган с `text-balance` — это **lead/слоган**-ступень (`text-3xl leading-tight font-medium md:text-5xl`), отдельная от «большого h2» ниже.
-- **SectionLabel** — mono-лейбл секции (терракота, `uppercase`, широкий трекинг); отступ снизу задаётся извне через `className`, т.к. в дизайне разный (16/20/24px).
-- **«Большой h2»** — ступень заголовка секции, крупнее lead-слогана: `font-serif text-4xl font-medium md:text-6xl` (без `tracking-*` — трекинг по умолчанию; `tracking-tight` на этом размере склеивал символы serif-шрифта). Используется в `Cta` («Готовы к приключениям?») и `UpcomingTrips` («Ближайшие путешествия») — везде, где заголовок секции самостоятелен, а не идёт парой с абзацем-слоганом, как в `Manifest`.
-- **TripCard** (`src/components/TripCard.tsx`) — переиспользуемая фото-карточка тура (используется в `UpcomingTrips` на главной, позже — на `/trips`): `aspect-[3/4]`, `rounded-lg`, затемняющий градиент снизу для читаемости — та же техника `color-mix(in oklch, var(--color-charcoal) N%, transparent)`, что и у градиента в `Hero`, только с одной стороны (снизу вверх, без верхнего затемнения), бейдж региона на терракоте, заголовок `text-3xl md:text-4xl font-serif font-semibold` (30→36px, ближе к макетным 34→46px, чем ступень «заголовок тура» из Hero) — меньше и «большого h2» секции, и заголовка активного тура в Hero, даты/цена — та же связка `font-mono text-sm font-bold tracking-widest uppercase`, что у дат в Hero. Hover: фото по умолчанию приглушённое (`saturate-50`), на hover «оживает» цветом (`saturate-100`) и слегка приближается (`scale-110`) — чистый CSS (`group`/`group-hover`, `transition-all duration-700`), без JS.
-- **UpcomingTrips** — секция «Ближайшие путешествия» на главной: заголовок — «большой h2» (см. выше), ссылка «Все путешествия» — связка `SectionLabel` (mono/bold/tracking-widest/uppercase), но меньше (`text-sm`) и терракотовая; сетка карточек `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`.
-- **Cta** — тёмная (`charcoal`) секция «Готовы к приключениям?» с терракотовой кнопкой на `/trips`; текст на тёмном через именованные ступени (`cream-400`), не через `opacity`.
+- **Header / HeaderHome** — fixed height (`min-h-17`), logo + navigation; the logo isn't duplicated on the home page (there's already a large one in Hero), the header itself is transparent over the photo.
+- **Navigation** — the active link is underlined and in full color (`charcoal`/`cream-100`), the inactive one is a muted solid color (`taupe`/`cream-400`), **not** via `opacity`.
+- **Footer** — a dark (`charcoal`) section; the same muted-text logic via `cream-400/500/600/800`, never via `opacity`.
+- **Hero** — a full-screen section with a cross-fade of trip photos (an `opacity` transition on a timer), a centered logo, a darkening gradient only in the bottom half of the frame for text legibility below.
+- **Manifest** — the "About us" section on the home page: a mono label (`О нас`), a large serif tagline with `text-balance` — this is the **lead/tagline** tier (`text-3xl leading-tight font-medium md:text-5xl`), separate from the "big h2" below.
+- **SectionLabel** — a section's mono label (terracotta, `uppercase`, wide tracking); the bottom margin is set from outside via `className` since it varies (16/20/24px) in the design.
+- **"Big h2"** — the section-heading tier, larger than the lead tagline: `font-serif text-4xl font-medium md:text-6xl` (no `tracking-*` — default tracking; `tracking-tight` at this size caused the serif glyphs to collide). Used in `Cta` ("Готовы к приключениям?") and `UpcomingTrips` ("Ближайшие путешествия") — anywhere a section heading stands on its own rather than pairing with a tagline paragraph the way `Manifest` does.
+- **TripCard** (`src/components/TripCard.tsx`) — a reusable trip photo card (used in `UpcomingTrips` on the home page, later on `/trips`): `aspect-[3/4]`, `rounded-lg`, a darkening gradient at the bottom for legibility — the same `color-mix(in oklch, var(--color-charcoal) N%, transparent)` technique as the gradient in `Hero`, but one-sided (bottom to top, no darkening at the top), a region badge on terracotta, a heading `text-3xl md:text-4xl font-serif font-semibold` (30→36px, closer to the design's 34→46px than the "trip title" tier from Hero) — smaller than both the section's "big h2" and the active trip title in Hero, dates/price use the same `font-mono text-sm font-bold tracking-widest uppercase` pairing as the dates in Hero. Hover: the photo is muted by default (`saturate-50`), "comes alive" with color on hover (`saturate-100`) and zooms in slightly (`scale-110`) — plain CSS (`group`/`group-hover`, `transition-all duration-700`), no JS.
+- **UpcomingTrips** — the "Ближайшие путешествия" section on the home page: the heading is the "big h2" (see above), the "Все путешествия" link reuses the `SectionLabel` pairing (mono/bold/tracking-widest/uppercase) but smaller (`text-sm`) and terracotta; the card grid is `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`.
+- **ReviewCard** (`src/app/(home)/_components/ReviewCard.tsx`, page-only — used only in `Reviews`) — a review card: `bg-sand`, `rounded-lg`, `p-9`; avatar `h-13 w-13 rounded-full`, name `text-base font-bold`, trip — a mono meta label (`text-ash font-mono text-xs tracking-wider uppercase`), quote — `font-serif text-xl font-medium leading-normal text-balance`, wrapped in «» directly in the markup (not in the content).
+- **Reviews** — the "Отзывы" section on the home page: two `Container`s in a row — a regular one (`max-w-7xl`) under the heading and prev/next buttons, followed by a `fullWidth` one just for the carousel track (only the track bleeds to the screen edge, not the section header). The heading is the "big h2" (see above) on the same line as the circular prev/next buttons (`items-baseline`, as in `UpcomingTrips` — the buttons don't drop below the heading's baseline). The carousel uses `embla-carousel-react` with no plugins (`align: 'start'`, no loop — the prev/next buttons dim (`disabled:opacity-40`) at the edges; swipe/drag out of the box, the track is `select-none` so dragging doesn't select card text, plus `will-change-transform`; no autoplay or fade — removed as unused dependencies). The gap between slides follows embla's official pattern (a negative `margin-left` on the track plus `padding-left` on each slide, `-ml-4/pl-4` → `md:-ml-6/pl-6` → `lg:-ml-10/pl-10`, the same steps as `Container`'s padding), **not** `gap` on the flex container — `gap` combined with a percentage `flex-basis` rounds unpredictably and breaks embla's `align: 'start'` alignment (a slide would sometimes sit flush, sometimes get clipped on the left). Slide width is `flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%]` with a `max-w-md` ceiling (keeps a card from growing too large on very wide screens in the fluid track).
+- **Cta** — a dark (`charcoal`) "Готовы к приключениям?" section with a terracotta button linking to `/trips`; text on the dark background uses named tiers (`cream-400`), not `opacity`.
 
 ## Do's and Don'ts
 
-- **Don't** использовать `text-{color}/NN` (opacity-модификатор) для приглушённого текста на известном сплошном фоне — заведи/используй именованную ступень шкалы (`cream-400` и т.д.).Опыт этого проекта: полу-прозрачный текст равносилен захардкоженному цвету "на глаз" и не масштабируется на новые компоненты.
-- **Don't** добавлять кастомный токен (цвет/spacing/radius), если для этого подходит значение из дефолтной шкалы Tailwind — см. `AGENTS.md`.
-- **Don't** писать utility-класс, который равен дефолтному CSS-значению (`tracking-normal`, `font-normal`, если он и так наследуется) — если ступень оказалась дефолтом, просто убери класс, а не пиши его явно (пример: «большой h2» без `tracking-*`, см. Components).
-- **Do** держать три шрифта строго за их ролями (sans — UI, serif — заголовки, mono — лейблы/даты), не смешивать внутри одного смыслового блока.
-- **Do** использовать `cn()` (`src/utils/cn.ts`) при любом объединении классов, где базовые классы могут быть переопределены снаружи через `className`.
+- **Don't** use `text-{color}/NN` (an opacity modifier) for muted text on a known solid background — set up/use a named scale tier instead (`cream-400`, etc.). This project's experience: semi-transparent text is equivalent to an eyeballed hardcoded color and doesn't scale to new components.
+- **Don't** add a custom token (color/spacing/radius) when a value from Tailwind's default scale already fits — see `AGENTS.md`.
+- **Don't** write a utility class that equals the CSS default value (`tracking-normal`, `font-normal` when it's already inherited) — if a tier turns out to be the default, just drop the class instead of writing it out explicitly (example: the "big h2" has no `tracking-*`, see Components).
+- **Do** keep the three fonts strictly to their roles (sans — UI, serif — headings, mono — labels/dates), never mixed within one semantic block.
+- **Do** use `cn()` (`src/utils/cn.ts`) whenever merging classes where the base classes might be overridden from outside via `className`.
