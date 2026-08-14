@@ -36,7 +36,7 @@ export function Reviews() {
               aria-label="Назад"
               disabled={!canScrollPrev}
               onClick={() => emblaApi?.scrollPrev()}
-              className="border-cream-400 hover:bg-charcoal hover:border-charcoal hover:text-cream-100 inline-flex h-13 w-13 items-center justify-center rounded-full border transition-colors disabled:pointer-events-none disabled:opacity-40"
+              className="border-cream-400 hover:bg-charcoal hover:border-charcoal hover:text-cream-100 inline-flex h-13 w-13 cursor-pointer items-center justify-center rounded-full border transition-colors disabled:pointer-events-none disabled:opacity-40"
             >
               <ArrowLeft className="h-5 w-5" />
             </button>
@@ -45,7 +45,7 @@ export function Reviews() {
               aria-label="Вперёд"
               disabled={!canScrollNext}
               onClick={() => emblaApi?.scrollNext()}
-              className="border-cream-400 hover:bg-charcoal hover:border-charcoal hover:text-cream-100 inline-flex h-13 w-13 items-center justify-center rounded-full border transition-colors disabled:pointer-events-none disabled:opacity-40"
+              className="border-cream-400 hover:bg-charcoal hover:border-charcoal hover:text-cream-100 inline-flex h-13 w-13 cursor-pointer items-center justify-center rounded-full border transition-colors disabled:pointer-events-none disabled:opacity-40"
             >
               <ArrowRight className="h-5 w-5" />
             </button>
