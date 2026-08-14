@@ -27,7 +27,7 @@ export function TripCard({ trip, className }: TripCardProps) {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklch,var(--color-charcoal)_90%,transparent)_0%,color-mix(in_oklch,var(--color-charcoal)_10%,transparent)_45%,transparent_75%)]" />
       <Badge className="absolute top-4 left-4">{trip.region}</Badge>
       <div className="absolute inset-x-0 bottom-0 p-6">
-        <h3 className="text-cream-100 font-serif text-3xl font-semibold md:text-4xl">
+        <h3 className="text-cream-100 font-serif text-3xl font-semibold text-balance md:text-4xl">
           {trip.title}
         </h3>
         <div className="text-cream-300 font-mono-tight mt-3 flex flex-col gap-1 text-sm font-bold uppercase">

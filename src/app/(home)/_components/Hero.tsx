@@ -26,7 +26,7 @@ export function Hero() {
 
   return (
     <section className="bg-charcoal relative min-h-dvh overflow-hidden">
-      <h1 className="sr-only">Шаг за перевал</h1>
+      <h1 className="sr-only text-balance">Шаг за перевал</h1>
 
       <div className="absolute inset-0">
         <div className="relative h-full">
@@ -69,7 +69,7 @@ export function Hero() {
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-24 z-10 flex flex-col items-center gap-4 px-4 text-center">
-        <h2 className="text-cream-100 font-serif text-3xl font-semibold md:text-5xl">
+        <h2 className="text-cream-100 font-serif text-3xl font-semibold text-balance md:text-5xl">
           {activeTrip.title}
         </h2>
         <span className="text-cream-300 font-mono-tight text-sm font-bold uppercase">

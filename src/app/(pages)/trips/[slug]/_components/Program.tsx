@@ -14,7 +14,7 @@ export function Program({ trip }: ProgramProps) {
         <div className="mb-11 flex flex-wrap items-end justify-between gap-5">
           <div>
             <SectionLabel className="mb-4">02 — Программа</SectionLabel>
-            <h2 className="font-serif text-4xl font-medium md:text-6xl">По дням</h2>
+            <h2 className="font-serif text-4xl font-medium text-balance md:text-6xl">По дням</h2>
           </div>
           <div className="font-mono-tight text-cream-600 text-sm uppercase md:text-base">
             {trip.hero.days} дней · {trip.hero.distance} км · {trip.hero.dates}
@@ -37,7 +37,7 @@ export function Program({ trip }: ProgramProps) {
                   ))}
                 </div>
               </div>
-              <h3 className="font-serif text-2xl font-semibold">{day.place}</h3>
+              <h3 className="font-serif text-2xl font-semibold text-balance">{day.place}</h3>
               <p className="text-cream-400 leading-relaxed">{day.text}</p>
             </div>
           ))}

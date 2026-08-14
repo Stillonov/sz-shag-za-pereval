@@ -10,7 +10,7 @@ export function UpcomingTrips() {
     <section className="py-16 md:py-24">
       <Container>
         <div className="mb-11 flex flex-wrap items-baseline justify-between gap-5">
-          <h2 className="w-full font-serif text-4xl font-medium md:text-6xl lg:w-auto">
+          <h2 className="w-full font-serif text-4xl font-medium text-balance md:text-6xl lg:w-auto">
             Ближайшие путешествия
           </h2>
           <Link

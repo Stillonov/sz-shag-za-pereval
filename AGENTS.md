@@ -73,6 +73,10 @@ Type a component's props with `type ComponentNameProps = {...}`, not `interface`
 
 Every enumerable item in `src/content/*.ts` (trips, reviews, etc.) gets an `id: number`, assigned sequentially from `0` in source order. Use `id` as the React `key` when mapping over the array — not `title`/`slug`/`name`, which aren't guaranteed unique once real content replaces the placeholders. Placeholder content in `src/content/` doesn't need a `TODO:` comment explaining it's a placeholder — that's already the default assumption for everything there.
 
+## Heading text wrapping
+
+Every heading element (`h1`–`h6`) gets `text-balance`, so it never leaves a lone short word stranded alone on its own line when it wraps. Apply it directly on the heading, not on a wrapping element — anything else on that element renders as a heading and should balance the same way, including places styled by hand rather than via a shared component. Non-heading text that wraps (e.g. an attribution line under a quote) can use it too when it's short and centered/prominent enough for orphan words to be noticeable — no need to restrict it strictly to `h1`–`h6`.
+
 ## No units in field names
 
 Don't bake a unit into a field name (`distanceKm`, `priceRub`, etc.) — name it plainly (`distance`, `price`) even when the value is a bare number. Keep the unit implicit/contextual instead.

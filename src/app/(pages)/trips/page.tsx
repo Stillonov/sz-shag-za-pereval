@@ -9,7 +9,7 @@ export default function TripsPage() {
     <section className="py-16 md:py-24">
       <Container>
         <SectionLabel className="mb-6">Календарь</SectionLabel>
-        <h1 className="font-serif text-5xl font-medium md:text-8xl">Путешествия</h1>
+        <h1 className="font-serif text-5xl font-medium text-balance md:text-8xl">Путешествия</h1>
         <p className="text-taupe mt-6 max-w-prose text-base leading-relaxed md:text-lg">
           Командные горные экспедиции в самые красивые и малохоженые районы. Небольшие группы,
           опытные гиды, настоящие приключения. Выбирайте маршрут и присоединяйтесь.
