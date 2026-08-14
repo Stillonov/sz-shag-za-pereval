@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { Badge } from '@/components/Badge';
+import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 
 import type { TripDetail } from '@/content/tripDetails';
@@ -48,12 +48,9 @@ export function TripHero({ trip }: TripHeroProps) {
               <div className="text-cream-400 text-base tracking-widest uppercase">стоимость</div>
             </div>
           </div>
-          <Link
-            href="/contacts"
-            className="bg-terracotta text-cream-100 inline-block shrink-0 rounded-md px-9 py-4 font-mono text-base font-bold tracking-widest uppercase transition duration-200 ease-out hover:brightness-110"
-          >
+          <Button href="/contacts" className="shrink-0">
             Присоединиться
-          </Link>
+          </Button>
         </div>
       </Container>
     </section>

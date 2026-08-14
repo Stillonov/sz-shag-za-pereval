@@ -1,5 +1,4 @@
-import Link from 'next/link';
-
+import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 
 export function Cta() {
@@ -13,12 +12,9 @@ export function Cta() {
           Выберите маршрут в календаре или напишите нам — подскажем, какое путешествие подойдёт
           именно вам.
         </p>
-        <Link
-          href="/trips"
-          className="bg-terracotta text-cream-100 mt-10 inline-block rounded-md px-9 py-4 font-mono text-base font-bold tracking-widest uppercase transition duration-200 ease-out hover:brightness-110"
-        >
+        <Button href="/trips" className="mt-10">
           Выбрать путешествие
-        </Link>
+        </Button>
       </Container>
     </section>
   );
