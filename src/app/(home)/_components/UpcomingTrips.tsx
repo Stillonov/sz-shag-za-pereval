@@ -1,0 +1,37 @@
+import Link from 'next/link';
+
+import { Container } from '@/components/Container';
+import { TripCard } from '@/components/TripCard';
+
+import { trips } from '@/content/trips';
+
+export function UpcomingTrips() {
+  return (
+    <section className="py-24">
+      <Container>
+        <div className="mb-11 flex flex-wrap items-baseline justify-between gap-5">
+          <h2 className="w-full text-center font-serif text-4xl font-medium tracking-tight md:text-6xl lg:w-auto lg:text-left">
+            Ближайшие путешествия
+          </h2>
+          <Link
+            href="/trips"
+            className="text-terracotta hidden font-mono text-sm font-bold tracking-widest uppercase hover:underline hover:underline-offset-4 lg:inline-block"
+          >
+            Все путешествия
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {trips.map((trip) => (
+            <TripCard key={trip.slug} trip={trip} />
+          ))}
+        </div>
+        <Link
+          href="/trips"
+          className="text-terracotta mt-10 block text-center font-mono text-sm font-bold tracking-widest uppercase hover:underline hover:underline-offset-4 lg:hidden"
+        >
+          Все путешествия
+        </Link>
+      </Container>
+    </section>
+  );
+}
