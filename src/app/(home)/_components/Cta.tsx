@@ -15,7 +15,7 @@ export function Cta() {
         </p>
         <Link
           href="/trips"
-          className="bg-terracotta text-cream-100 mt-10 inline-block rounded-md px-9 py-4 font-mono text-base font-bold tracking-widest uppercase hover:brightness-110"
+          className="bg-terracotta text-cream-100 mt-10 inline-block rounded-md px-9 py-4 font-mono text-base font-bold tracking-widest uppercase transition duration-200 ease-out hover:brightness-110"
         >
           Выбрать путешествие
         </Link>

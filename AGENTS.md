@@ -32,6 +32,10 @@ All code comments, documents, and READMEs are written in English, regardless of 
 
 Shared helper functions (e.g. `cn`) go in `src/utils`, imported via the `@/utils/...` path alias.
 
+## Icons
+
+Import `lucide-react` icons using their `*Icon` alias (e.g. `MenuIcon`, not `Menu`) — the package exports both names for every icon specifically to avoid collisions with same-named DOM/library exports (`X`, `Menu`, etc.).
+
 ## Design system fidelity
 
 Prefer Tailwind's own scale (spacing, colors, `container`/`max-w`, font sizes, etc.) over custom tokens or arbitrary bracket values. We're not going for pixel-perfect fidelity to the design handoff — snap to the nearest value Tailwind already provides instead of reproducing an exact px/rem number. Only add a custom token when nothing in Tailwind's default scale is close enough.

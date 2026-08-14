@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { MenuIcon, XIcon } from 'lucide-react';
 
 import { Container } from '@/components/Container';
 
@@ -16,9 +16,9 @@ export function HeaderMobileMenu() {
         type="button"
         popoverTarget={MENU_ID}
         aria-label="Открыть меню"
-        className="text-charcoal inline-flex items-center justify-center"
+        className="text-charcoal inline-flex cursor-pointer items-center justify-center"
       >
-        <Menu className="h-6 w-6" />
+        <MenuIcon className="h-6 w-6" />
       </button>
 
       <div
@@ -32,9 +32,9 @@ export function HeaderMobileMenu() {
             popoverTarget={MENU_ID}
             popoverTargetAction="hide"
             aria-label="Закрыть меню"
-            className="text-charcoal inline-flex items-center justify-center"
+            className="text-charcoal inline-flex cursor-pointer items-center justify-center"
           >
-            <X className="h-6 w-6" />
+            <XIcon className="h-6 w-6" />
           </button>
         </Container>
 

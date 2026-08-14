@@ -97,3 +97,4 @@ Sharp corners by default — `rounded` is barely used. Two deliberate exceptions
 - **Don't** write a utility class that equals the CSS default value (`tracking-normal`, `font-normal` when it's already inherited) — if a tier turns out to be the default, just drop the class instead of writing it out explicitly (example: the "big h2" has no `tracking-*`, see Components).
 - **Do** keep the three fonts strictly to their roles (sans — UI, serif — headings, mono — labels/dates), never mixed within one semantic block.
 - **Do** use `cn()` (`src/utils/cn.ts`) whenever merging classes where the base classes might be overridden from outside via `className`.
+- **Do** give every button's hover transition the same timing — `duration-200 ease-out` (`Cta`'s link-button, the prev/next buttons in `Reviews`) — so hover feedback feels consistent across controls.
