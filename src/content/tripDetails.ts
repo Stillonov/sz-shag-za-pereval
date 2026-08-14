@@ -15,6 +15,10 @@ export type TripDetail = {
     paragraphs: string[];
     photos: string[];
   };
+  quote: {
+    text: string;
+    author: string;
+  };
 };
 
 export const tripDetails: TripDetail[] = [
@@ -43,6 +47,10 @@ export const tripDetails: TripDetail[] = [
         '/assets/about-cascade-lake.jpg',
       ],
     },
+    quote: {
+      text: 'Кавказ раскрывается по частям — ущелье, ледяная дорога, плато на рассвете, — и каждый день превращается в отдельную историю.',
+      author: 'Сергей Жарахин, основатель «Шаг за перевал»',
+    },
   },
   {
     id: 1,
@@ -65,6 +73,10 @@ export const tripDetails: TripDetail[] = [
       ],
       photos: ['/assets/hero-2.jpg', '/assets/hero-1.jpg', '/assets/hero-3.jpg'],
     },
+    quote: {
+      text: 'Бермамыт не встречает сразу — сначала туман, потом облака проваливаются вниз, и остаётся только плато и небо.',
+      author: 'Сергей Жарахин, основатель «Шаг за перевал»',
+    },
   },
   {
     id: 2,
@@ -86,6 +98,10 @@ export const tripDetails: TripDetail[] = [
         'Завершаем поход выходом к смотровой площадке с видом на Домбай-Ульген — одну из главных вершин района.',
       ],
       photos: ['/assets/hero-3.jpg', '/assets/hero-2.jpg', '/assets/hero-1.jpg'],
+    },
+    quote: {
+      text: 'Ледник меняется каждый час — то, что вы увидите утром, вечером будет уже другим светом и другой тишиной.',
+      author: 'Сергей Жарахин, основатель «Шаг за перевал»',
     },
   },
 ];

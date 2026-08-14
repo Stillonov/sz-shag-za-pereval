@@ -9,7 +9,7 @@ export default function ContactsPage() {
       <Container>
         <SectionLabel className="mb-6">На связи</SectionLabel>
         <h1 className="font-serif text-5xl font-medium md:text-8xl">Контакты</h1>
-        <div className="mt-9 flex flex-col gap-3 text-2xl font-semibold">
+        <div className="mt-9 flex flex-col items-start gap-3 text-2xl font-semibold">
           <a
             href={`mailto:${siteContact.email}`}
             className="hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4"
