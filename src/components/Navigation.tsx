@@ -9,18 +9,24 @@ import { cn } from '@/utils/cn';
 type NavigationProps = {
   className?: string;
   variant?: 'light' | 'dark';
+  muteInactive?: boolean;
 };
 
-export function Navigation({ className, variant = 'light' }: NavigationProps) {
+export function Navigation({ className, variant = 'light', muteInactive = true }: NavigationProps) {
   const pathname = usePathname();
+  const links = pathname === '/' ? navLinks.filter((link) => link.href !== '/') : navLinks;
 
   return (
     <nav className={cn('flex items-center gap-8 font-sans text-base', className)}>
-      {navLinks.map((link) => {
+      {links.map((link) => {
         const isActive = pathname === link.href;
 
         const activeColor = variant === 'light' ? 'text-charcoal' : 'text-cream-100';
-        const inactiveColor = variant === 'light' ? 'text-taupe' : 'text-cream-400';
+        const inactiveColor = !muteInactive
+          ? activeColor
+          : variant === 'light'
+            ? 'text-taupe'
+            : 'text-cream-400';
 
         return (
           <Link

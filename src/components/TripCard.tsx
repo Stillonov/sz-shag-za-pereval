@@ -13,14 +13,14 @@ export function TripCard({ trip, className }: TripCardProps) {
   return (
     <Link
       href={`/trips/${trip.slug}`}
-      className={cn('relative block aspect-3/4 overflow-hidden rounded-lg', className)}
+      className={cn('group relative block aspect-3/4 overflow-hidden rounded-lg', className)}
     >
       <Image
         src={trip.photo}
         alt={trip.title}
         fill
         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-        className="object-cover"
+        className="object-cover saturate-50 transition-all duration-700 ease-out group-hover:scale-110 group-hover:saturate-100"
       />
       <div className="from-charcoal/90 via-charcoal/10 absolute inset-0 bg-linear-to-t to-transparent" />
       <span className="bg-terracotta text-cream-100 absolute top-4 left-4 rounded-md px-3 py-1.5 font-mono text-xs font-bold tracking-wider uppercase">
