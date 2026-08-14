@@ -34,26 +34,20 @@ export function Hero({ trip }: HeroProps) {
         </h1>
 
         <div className="border-cream-400 mt-10 flex flex-wrap items-center justify-between gap-6 border-t pt-6">
-          <div className="flex flex-wrap gap-5 font-mono md:gap-8">
+          <div className="font-mono-tight flex flex-wrap gap-5 md:gap-8">
             <div>
               <div className="text-cream-100 text-lg font-bold md:text-2xl">{trip.hero.days}</div>
-              <div className="text-cream-400 text-sm tracking-widest uppercase md:text-base">
-                дней
-              </div>
+              <div className="text-cream-400 text-sm uppercase md:text-base">дней</div>
             </div>
             <div>
               <div className="text-cream-100 text-lg font-bold md:text-2xl">
                 {trip.hero.distance}
               </div>
-              <div className="text-cream-400 text-sm tracking-widest uppercase md:text-base">
-                км
-              </div>
+              <div className="text-cream-400 text-sm uppercase md:text-base">км</div>
             </div>
             <div>
               <div className="text-cream-100 text-lg font-bold md:text-2xl">{trip.hero.price}</div>
-              <div className="text-cream-400 text-sm tracking-widest uppercase md:text-base">
-                стоимость
-              </div>
+              <div className="text-cream-400 text-sm uppercase md:text-base">стоимость</div>
             </div>
           </div>
           <Button href="/contacts" className="shrink-0">

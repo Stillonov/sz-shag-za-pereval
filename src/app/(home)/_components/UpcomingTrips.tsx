@@ -15,7 +15,7 @@ export function UpcomingTrips() {
           </h2>
           <Link
             href="/trips"
-            className="text-terracotta hidden font-mono text-sm font-bold tracking-widest uppercase hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4 lg:inline-block"
+            className="text-terracotta font-mono-tight hidden text-sm font-bold uppercase hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4 lg:inline-block"
           >
             Все путешествия
           </Link>
@@ -27,7 +27,7 @@ export function UpcomingTrips() {
         </div>
         <Link
           href="/trips"
-          className="text-terracotta mt-10 block text-center font-mono text-sm font-bold tracking-widest uppercase hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4 lg:hidden"
+          className="text-terracotta font-mono-tight mt-10 block text-center text-sm font-bold uppercase hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4 lg:hidden"
         >
           Все путешествия
         </Link>

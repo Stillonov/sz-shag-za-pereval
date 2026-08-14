@@ -23,7 +23,7 @@ export default function ContactsPage() {
             {siteContact.phone}
           </a>
         </div>
-        <div className="mt-5 flex gap-5 font-mono text-xs tracking-wider uppercase">
+        <div className="font-mono-tight mt-5 flex gap-5 text-xs uppercase">
           {socialLinks.map((link) => (
             <a
               key={link.label}

@@ -21,7 +21,7 @@ export function Footer({ className }: FooterProps) {
         <Navigation variant="dark" />
 
         <div className="flex flex-col items-center gap-3.5 md:items-end">
-          <div className="flex flex-col items-center font-mono text-sm leading-relaxed md:items-end">
+          <div className="font-mono-tight flex flex-col items-center text-sm leading-relaxed md:items-end">
             <a
               href={`mailto:${siteContact.email}`}
               className="hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4"
@@ -35,7 +35,7 @@ export function Footer({ className }: FooterProps) {
               {siteContact.phone}
             </a>
           </div>
-          <div className="flex gap-5 font-mono text-xs tracking-wider uppercase">
+          <div className="font-mono-tight flex gap-5 text-xs uppercase">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
@@ -49,7 +49,7 @@ export function Footer({ className }: FooterProps) {
         </div>
       </Container>
 
-      <Container className="border-cream-800 text-cream-600 mt-10 border-t pt-6 text-center font-mono text-xs tracking-wider md:text-left">
+      <Container className="border-cream-800 text-cream-600 font-mono-tight mt-10 border-t pt-6 text-center text-xs md:text-left">
         <span>&copy; {new Date().getFullYear()} Шаг за перевал · Все права защищены</span>
       </Container>
     </footer>

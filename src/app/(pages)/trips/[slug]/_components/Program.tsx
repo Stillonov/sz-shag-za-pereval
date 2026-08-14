@@ -16,7 +16,7 @@ export function Program({ trip }: ProgramProps) {
             <SectionLabel className="mb-4">02 — Программа</SectionLabel>
             <h2 className="font-serif text-4xl font-medium md:text-6xl">По дням</h2>
           </div>
-          <div className="text-cream-600 font-mono text-sm tracking-widest uppercase">
+          <div className="font-mono-tight text-cream-600 text-sm uppercase md:text-base">
             {trip.hero.days} дней · {trip.hero.distance} км · {trip.hero.dates}
           </div>
         </div>
@@ -27,11 +27,11 @@ export function Program({ trip }: ProgramProps) {
               key={day.id}
               className="border-cream-800 grid grid-cols-1 gap-2 border-b py-6 md:grid-cols-[210px_1fr_1.3fr] md:gap-7"
             >
-              <div className="font-mono">
-                <div className="text-terracotta text-base font-bold tracking-widest uppercase">
+              <div>
+                <div className="text-terracotta font-mono-tight text-base font-bold uppercase">
                   День {day.n}
                 </div>
-                <div className="text-cream-600 mt-1.5 flex flex-wrap gap-x-3 text-xs tracking-wider uppercase">
+                <div className="font-mono-tight text-cream-600 mt-1.5 flex flex-col gap-1 text-xs uppercase">
                   {day.tags.map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}

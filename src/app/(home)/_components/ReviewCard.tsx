@@ -21,14 +21,10 @@ export function ReviewCard({ review, className }: ReviewCardProps) {
         />
         <div>
           <div className="text-base font-bold">{review.name}</div>
-          <div className="text-ash mt-1 font-mono text-xs tracking-wider uppercase">
-            {review.trip}
-          </div>
+          <div className="text-ash font-mono-tight mt-1 text-xs uppercase">{review.trip}</div>
         </div>
       </div>
-      <p className="font-serif text-xl leading-normal font-medium text-balance">
-        «{review.text}»
-      </p>
+      <p className="font-serif text-xl leading-normal font-medium text-balance">«{review.text}»</p>
     </div>
   );
 }

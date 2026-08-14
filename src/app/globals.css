@@ -45,3 +45,9 @@ body {
   color: var(--color-charcoal);
   font-family: var(--font-sans);
 }
+
+@utility font-mono-tight {
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-wider);
+  word-spacing: -0.4em;
+}

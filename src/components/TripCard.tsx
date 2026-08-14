@@ -30,7 +30,7 @@ export function TripCard({ trip, className }: TripCardProps) {
         <h3 className="text-cream-100 font-serif text-3xl font-semibold md:text-4xl">
           {trip.title}
         </h3>
-        <div className="text-cream-300 mt-3 flex flex-col gap-1 font-mono text-sm font-bold tracking-widest uppercase">
+        <div className="text-cream-300 font-mono-tight mt-3 flex flex-col gap-1 text-sm font-bold uppercase">
           <span>{trip.dates}</span>
           <span>{trip.price}</span>
         </div>

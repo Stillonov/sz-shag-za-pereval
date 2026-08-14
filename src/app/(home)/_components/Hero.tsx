@@ -72,7 +72,7 @@ export function Hero() {
         <h2 className="text-cream-100 font-serif text-3xl font-semibold md:text-5xl">
           {activeTrip.title}
         </h2>
-        <span className="text-cream-300 font-mono text-sm font-bold tracking-widest uppercase">
+        <span className="text-cream-300 font-mono-tight text-sm font-bold uppercase">
           {activeTrip.dates}
         </span>
       </div>

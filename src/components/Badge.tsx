@@ -12,7 +12,7 @@ export function Badge({ children, variant = 'terracotta', className }: BadgeProp
   return (
     <span
       className={cn(
-        'text-cream-100 rounded-md px-3 py-1.5 font-mono text-xs font-bold tracking-wider uppercase',
+        'font-mono-tight text-cream-100 rounded-md px-3 py-1.5 text-xs font-bold uppercase',
         variant === 'terracotta' ? 'bg-terracotta' : 'bg-charcoal',
         className,
       )}

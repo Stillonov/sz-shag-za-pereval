@@ -9,12 +9,7 @@ type SectionLabelProps = {
 
 export function SectionLabel({ children, className }: SectionLabelProps) {
   return (
-    <div
-      className={cn(
-        'text-terracotta font-mono text-base font-bold tracking-widest uppercase',
-        className,
-      )}
-    >
+    <div className={cn('text-terracotta font-mono-tight text-base font-bold uppercase', className)}>
       {children}
     </div>
   );

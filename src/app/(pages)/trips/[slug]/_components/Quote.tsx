@@ -16,7 +16,7 @@ export function Quote({ trip }: QuoteProps) {
         <p className="mt-3 font-serif text-[clamp(var(--text-2xl),4vw,var(--text-5xl))] leading-tight font-medium text-balance">
           {trip.quote.text}
         </p>
-        <div className="text-ash mt-9 font-mono text-sm tracking-widest uppercase md:text-base">
+        <div className="text-ash font-mono-tight mt-9 text-sm uppercase md:text-base">
           — {trip.quote.author}
         </div>
       </Container>
