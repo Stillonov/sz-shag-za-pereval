@@ -3,7 +3,7 @@ import { Container } from '@/components/Container';
 
 export function Cta() {
   return (
-    <section className="bg-charcoal py-24">
+    <section className="bg-charcoal py-16 md:py-24">
       <Container className="max-w-4xl text-center">
         <h2 className="text-cream-100 font-serif text-4xl leading-none font-medium md:text-6xl">
           Готовы к приключениям?

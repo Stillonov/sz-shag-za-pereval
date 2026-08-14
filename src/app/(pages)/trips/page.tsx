@@ -6,7 +6,7 @@ import { trips } from '@/content/trips';
 
 export default function TripsPage() {
   return (
-    <section className="py-24">
+    <section className="py-16 md:py-24">
       <Container>
         <SectionLabel className="mb-6">Календарь</SectionLabel>
         <h1 className="font-serif text-5xl font-medium md:text-8xl">Путешествия</h1>

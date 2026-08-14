@@ -6,15 +6,15 @@ import { Container } from '@/components/Container';
 
 import type { TripDetail } from '@/content/tripDetails';
 
-type TripHeroProps = {
+type HeroProps = {
   trip: TripDetail;
 };
 
-export function TripHero({ trip }: TripHeroProps) {
+export function Hero({ trip }: HeroProps) {
   return (
     <section className="bg-charcoal relative flex min-h-[calc(100dvh-(--spacing(17)))] flex-col justify-end overflow-hidden">
       <Image
-        src={trip.photo}
+        src={trip.hero.photo}
         alt={trip.title}
         fill
         priority
@@ -25,26 +25,26 @@ export function TripHero({ trip }: TripHeroProps) {
 
       <Container fullWidth className="relative z-10 pb-20">
         <div className="flex flex-wrap gap-2.5">
-          <Badge>{trip.dates}</Badge>
-          <Badge variant="charcoal">{trip.format}</Badge>
+          <Badge>{trip.hero.dates}</Badge>
+          <Badge variant="charcoal">{trip.hero.format}</Badge>
         </div>
 
         <h1 className="text-cream-100 mt-5 w-1/2 font-serif text-5xl font-medium text-balance md:text-8xl">
           {trip.title}
         </h1>
 
-        <div className="border-cream-400 mt-20 flex flex-wrap items-center justify-between gap-6 border-t pt-6">
+        <div className="border-cream-400 mt-10 flex flex-wrap items-center justify-between gap-6 border-t pt-6">
           <div className="flex flex-wrap gap-8 font-mono">
             <div>
-              <div className="text-cream-100 text-2xl font-bold">{trip.days}</div>
+              <div className="text-cream-100 text-2xl font-bold">{trip.hero.days}</div>
               <div className="text-cream-400 text-base tracking-widest uppercase">дней</div>
             </div>
             <div>
-              <div className="text-cream-100 text-2xl font-bold">{trip.distance}</div>
+              <div className="text-cream-100 text-2xl font-bold">{trip.hero.distance}</div>
               <div className="text-cream-400 text-base tracking-widest uppercase">км</div>
             </div>
             <div>
-              <div className="text-cream-100 text-2xl font-bold">{trip.price}</div>
+              <div className="text-cream-100 text-2xl font-bold">{trip.hero.price}</div>
               <div className="text-cream-400 text-base tracking-widest uppercase">стоимость</div>
             </div>
           </div>

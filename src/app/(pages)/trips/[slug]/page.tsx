@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 
 import { tripDetails } from '@/content/tripDetails';
 
-import { TripHero } from './_components/TripHero';
+import { About } from './_components/About';
+import { Hero } from './_components/Hero';
 
 export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
   const { slug } = await props.params;
@@ -10,5 +11,10 @@ export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
 
   if (!trip) notFound();
 
-  return <TripHero trip={trip} />;
+  return (
+    <>
+      <Hero trip={trip} />
+      <About trip={trip} />
+    </>
+  );
 }

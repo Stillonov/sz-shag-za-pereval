@@ -26,7 +26,7 @@ export function Reviews() {
   const canScrollNext = emblaApi?.canScrollNext() ?? false;
 
   return (
-    <section className="py-24">
+    <section className="py-16 md:py-24">
       <Container>
         <div className="mb-11 flex items-baseline justify-between gap-5">
           <h2 className="font-serif text-4xl font-medium md:text-6xl">Отзывы</h2>

@@ -35,8 +35,8 @@ export function Navigation({ variant = 'light', muteInactive = true, className }
             aria-current={isActive ? 'page' : undefined}
             className={cn(
               isActive
-                ? `${activeColor} underline underline-offset-4`
-                : `${inactiveColor} hover:underline hover:underline-offset-4`,
+                ? `${activeColor} underline decoration-[--underline-thickness] underline-offset-4`
+                : `${inactiveColor} hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4`,
             )}
           >
             {link.label}

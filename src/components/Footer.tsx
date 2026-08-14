@@ -24,13 +24,13 @@ export function Footer({ className }: FooterProps) {
           <div className="text-center font-mono text-sm leading-relaxed md:text-right">
             <a
               href={`mailto:${siteContact.email}`}
-              className="block hover:underline hover:underline-offset-4"
+              className="block hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4"
             >
               {siteContact.email}
             </a>
             <a
               href={`tel:${siteContact.phone.replace(/\s+/g, '')}`}
-              className="block hover:underline hover:underline-offset-4"
+              className="block hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4"
             >
               {siteContact.phone}
             </a>
@@ -40,7 +40,7 @@ export function Footer({ className }: FooterProps) {
               <a
                 key={link.label}
                 href={link.href}
-                className="hover:underline hover:underline-offset-4"
+                className="hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4"
               >
                 {link.label}
               </a>

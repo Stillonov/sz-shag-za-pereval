@@ -7,15 +7,15 @@ import { trips } from '@/content/trips';
 
 export function UpcomingTrips() {
   return (
-    <section className="py-24">
+    <section className="py-16 md:py-24">
       <Container>
         <div className="mb-11 flex flex-wrap items-baseline justify-between gap-5">
-          <h2 className="w-full text-center font-serif text-4xl font-medium md:text-6xl lg:w-auto lg:text-left">
+          <h2 className="w-full font-serif text-4xl font-medium md:text-6xl lg:w-auto">
             Ближайшие путешествия
           </h2>
           <Link
             href="/trips"
-            className="text-terracotta hidden font-mono text-sm font-bold tracking-widest uppercase hover:underline hover:underline-offset-4 lg:inline-block"
+            className="text-terracotta hidden font-mono text-sm font-bold tracking-widest uppercase hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4 lg:inline-block"
           >
             Все путешествия
           </Link>
@@ -27,7 +27,7 @@ export function UpcomingTrips() {
         </div>
         <Link
           href="/trips"
-          className="text-terracotta mt-10 block text-center font-mono text-sm font-bold tracking-widest uppercase hover:underline hover:underline-offset-4 lg:hidden"
+          className="text-terracotta mt-10 block text-center font-mono text-sm font-bold tracking-widest uppercase hover:underline hover:decoration-[--underline-thickness] hover:underline-offset-4 lg:hidden"
         >
           Все путешествия
         </Link>

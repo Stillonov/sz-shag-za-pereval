@@ -15,7 +15,7 @@ export const trips: Trip[] = [
     title: 'Северный Кавказ',
     region: 'Кавказ',
     dates: '15 – 19 августа 2026',
-    price: 'от 100 000 ₽',
+    price: '100 000 ₽',
     photo: '/assets/hero-1.jpg',
   },
   {
@@ -24,7 +24,7 @@ export const trips: Trip[] = [
     title: 'Плато Бермамыт',
     region: 'Кавказ',
     dates: '2 – 6 сентября 2026',
-    price: 'от 85 000 ₽',
+    price: '85 000 ₽',
     photo: '/assets/hero-2.jpg',
   },
   {
@@ -33,7 +33,7 @@ export const trips: Trip[] = [
     title: 'Ледники Домбая',
     region: 'Кавказ',
     dates: '20 – 24 сентября 2026',
-    price: 'от 95 000 ₽',
+    price: '95 000 ₽',
     photo: '/assets/hero-3.jpg',
   },
 ];
