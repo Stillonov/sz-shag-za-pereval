@@ -1,12 +1,14 @@
 import { notFound } from 'next/navigation';
 
-import { trips } from '@/content/trips';
+import { tripDetails } from '@/content/tripDetails';
+
+import { TripHero } from './_components/TripHero';
 
 export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
   const { slug } = await props.params;
-  const trip = trips.find((trip) => trip.slug === slug);
+  const trip = tripDetails.find((trip) => trip.slug === slug);
 
   if (!trip) notFound();
 
-  return <p className="font-sans text-base md:text-lg">{trip.title}</p>;
+  return <TripHero trip={trip} />;
 }

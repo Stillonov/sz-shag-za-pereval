@@ -66,3 +66,7 @@ Type a component's props with `type ComponentNameProps = {...}`, not `interface`
 ## Content array ids
 
 Every enumerable item in `src/content/*.ts` (trips, reviews, etc.) gets an `id: number`, assigned sequentially from `0` in source order. Use `id` as the React `key` when mapping over the array — not `title`/`slug`/`name`, which aren't guaranteed unique once real content replaces the placeholders. Placeholder content in `src/content/` doesn't need a `TODO:` comment explaining it's a placeholder — that's already the default assumption for everything there.
+
+## No units in field names
+
+Don't bake a unit into a field name (`distanceKm`, `priceRub`, etc.) — name it plainly (`distance`, `price`) even when the value is a bare number. Keep the unit implicit/contextual instead.

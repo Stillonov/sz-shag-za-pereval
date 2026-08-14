@@ -12,7 +12,7 @@ type HeaderProps = {
 export function Header({ className }: HeaderProps) {
   return (
     <header className={className}>
-      <Container fullWidth className="flex min-h-17 items-center justify-between py-3">
+      <Container fullWidth className="flex h-17 items-center justify-between py-3">
         <Link href="/" aria-label="Шаг за перевал — на главную">
           <Logo />
         </Link>
