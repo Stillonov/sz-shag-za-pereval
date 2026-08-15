@@ -14,6 +14,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Never run `git commit` or `git push` unless explicitly asked to, in that specific instance. Finishing a change does not imply permission to commit it — always ask first.
 
+Commit straight to `main` — don't create a feature branch for a task unless explicitly asked to.
+
+Never add a `Co-Authored-By` trailer (or any co-author attribution) to commit messages, regardless of default tooling behavior that suggests it.
+
 ## Language
 
 All code comments, documents, and READMEs are written in English, regardless of the language of the resource's own content (e.g. UI copy).
