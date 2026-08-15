@@ -33,6 +33,9 @@ export type TripDetail = {
     caption: string;
     photo: string;
   }[];
+  map: {
+    photo: string;
+  };
 };
 
 export const tripDetails: TripDetail[] = [
@@ -113,6 +116,9 @@ export const tripDetails: TripDetail[] = [
       { id: 5, caption: 'дорога на Джилы-Су', photo: '/assets/gallery-jilysu-road.jpg' },
       { id: 6, caption: 'водопад Каракая-Суу', photo: '/assets/gallery-karakaya-falls.jpg' },
     ],
+    map: {
+      photo: '/assets/route-map.jpg',
+    },
   },
   {
     id: 1,
@@ -169,6 +175,9 @@ export const tripDetails: TripDetail[] = [
       { id: 1, caption: 'Плато Бермамыт', photo: '/assets/hero-1.jpg' },
       { id: 2, caption: 'Мостик в небо', photo: '/assets/hero-3.jpg' },
     ],
+    map: {
+      photo: '/assets/route-map.jpg',
+    },
   },
   {
     id: 2,
@@ -233,5 +242,8 @@ export const tripDetails: TripDetail[] = [
       { id: 2, caption: 'Сентинский храм', photo: '/assets/about-cherek.jpg' },
       { id: 3, caption: 'Домбай-Ульген', photo: '/assets/hero-1.jpg' },
     ],
+    map: {
+      photo: '/assets/route-map.jpg',
+    },
   },
 ];
