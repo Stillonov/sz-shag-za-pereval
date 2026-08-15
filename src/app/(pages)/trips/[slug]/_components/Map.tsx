@@ -17,15 +17,14 @@ export function Map({ trip }: MapProps) {
         <h2 className="mb-12 font-serif text-4xl font-medium text-balance md:text-6xl">
           Карта маршрута
         </h2>
-        <div className="relative aspect-43/24 overflow-hidden rounded-lg">
-          <Image
-            src={trip.map.photo}
-            alt="Карта маршрута"
-            fill
-            sizes="(min-width: 1280px) 1240px, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <Image
+          src={trip.map.photo}
+          alt="Карта маршрута"
+          width={2752}
+          height={1536}
+          sizes="(min-width: 1280px) 1240px, 100vw"
+          className="h-auto w-full rounded-lg"
+        />
       </Container>
     </section>
   );
