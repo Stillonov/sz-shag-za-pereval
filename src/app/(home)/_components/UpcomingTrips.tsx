@@ -20,7 +20,7 @@ export function UpcomingTrips() {
             Все путешествия
           </Link>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-10">
           {trips.map((trip) => (
             <TripCard key={trip.id} trip={trip} />
           ))}

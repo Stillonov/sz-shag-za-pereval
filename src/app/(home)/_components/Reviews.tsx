@@ -52,18 +52,16 @@ export function Reviews() {
           </div>
         </div>
       </Container>
-      <Container fullWidth>
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="-ml-4 flex will-change-transform select-none md:-ml-6 lg:-ml-10">
-            {reviews.map((review) => (
-              <div
-                key={review.id}
-                className="min-w-0 max-w-md flex-[0_0_100%] pl-4 md:flex-[0_0_50%] md:pl-6 lg:flex-[0_0_33.333%] lg:pl-10"
-              >
-                <ReviewCard review={review} className="h-full" />
-              </div>
-            ))}
-          </div>
+      <Container ref={emblaRef} className="overflow-hidden" fullWidth>
+        <div className="-ml-4 flex will-change-transform select-none md:-ml-6 lg:-ml-10">
+          {reviews.map((review) => (
+            <div
+              key={review.id}
+              className="max-w-md min-w-0 flex-[0_0_100%] pl-4 md:flex-[0_0_50%] md:pl-6 lg:flex-[0_0_33.333%] lg:pl-10"
+            >
+              <ReviewCard review={review} className="h-full" />
+            </div>
+          ))}
         </div>
       </Container>
     </section>

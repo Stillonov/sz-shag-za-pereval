@@ -44,7 +44,7 @@ Don't add a utility class whose only effect is the CSS default (e.g. `tracking-n
 
 ## Design system reference
 
-[`DESIGN.md`](DESIGN.md) (repo root, [format spec](https://github.com/google-labs-code/design.md)) documents the actual design system — colors, typography, layout, shapes, component patterns, do's/don'ts. It's a living document: whenever a change adds/renames/removes a design token (a color in `globals.css`, a font, a spacing/rounded override) or introduces a new reusable visual pattern, update `DESIGN.md` in the same change. Keep it reflecting what the code actually does, not aspirational — don't document a token or pattern that isn't in use yet.
+[`DESIGN.md`](DESIGN.md) (repo root, [format spec](https://github.com/google-labs-code/design.md)) documents the actual design system — colors, typography, layout, shapes, component patterns, do's/don'ts. It's a living document, but only update it once a change is settled and about to be committed — not on every intermediate iteration while still tweaking a design back and forth. If it's unclear whether the current state is final, ask (e.g. "меняем дизайн и коммитим?") before touching `DESIGN.md`. Once a change adding/renaming/removing a design token (a color in `globals.css`, a font, a spacing/rounded override) or a new reusable visual pattern is settled, update `DESIGN.md` in the same commit. Keep it reflecting what the code actually does, not aspirational — don't document a token or pattern that isn't in use yet.
 
 ## Shared component props
 

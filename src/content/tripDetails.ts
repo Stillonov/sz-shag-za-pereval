@@ -28,6 +28,11 @@ export type TripDetail = {
       text: string;
     }[];
   };
+  gallery: {
+    id: number;
+    caption: string;
+    photo: string;
+  }[];
 };
 
 export const tripDetails: TripDetail[] = [
@@ -99,6 +104,15 @@ export const tripDetails: TripDetail[] = [
         },
       ],
     },
+    gallery: [
+      { id: 0, caption: 'Черекская теснина', photo: '/assets/gallery-cherek.jpg' },
+      { id: 1, caption: 'Сентинский храм', photo: '/assets/gallery-sentinsky.jpg' },
+      { id: 2, caption: 'Мусса-Ачитара', photo: '/assets/gallery-mussa-achitara.jpg' },
+      { id: 3, caption: 'плато Бермамыт', photo: '/assets/gallery-bermamyt.jpg' },
+      { id: 4, caption: '«Мостик в небо»', photo: '/assets/gallery-mostik-nebo.jpg' },
+      { id: 5, caption: 'дорога на Джилы-Су', photo: '/assets/gallery-jilysu-road.jpg' },
+      { id: 6, caption: 'водопад Каракая-Суу', photo: '/assets/gallery-karakaya-falls.jpg' },
+    ],
   },
   {
     id: 1,
@@ -150,6 +164,11 @@ export const tripDetails: TripDetail[] = [
         },
       ],
     },
+    gallery: [
+      { id: 0, caption: 'Приэльбрусье', photo: '/assets/hero-2.jpg' },
+      { id: 1, caption: 'Плато Бермамыт', photo: '/assets/hero-1.jpg' },
+      { id: 2, caption: 'Мостик в небо', photo: '/assets/hero-3.jpg' },
+    ],
   },
   {
     id: 2,
@@ -208,5 +227,11 @@ export const tripDetails: TripDetail[] = [
         },
       ],
     },
+    gallery: [
+      { id: 0, caption: 'Мусса-Ачитара', photo: '/assets/hero-3.jpg' },
+      { id: 1, caption: 'Озеро Кара-Кёль', photo: '/assets/hero-2.jpg' },
+      { id: 2, caption: 'Сентинский храм', photo: '/assets/about-cherek.jpg' },
+      { id: 3, caption: 'Домбай-Ульген', photo: '/assets/hero-1.jpg' },
+    ],
   },
 ];

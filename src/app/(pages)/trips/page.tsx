@@ -14,7 +14,7 @@ export default function TripsPage() {
           Командные горные экспедиции в самые красивые и малохоженые районы. Небольшие группы,
           опытные гиды, настоящие приключения. Выбирайте маршрут и присоединяйтесь.
         </p>
-        <div className="mt-11 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-11 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-10">
           {trips.map((trip) => (
             <TripCard key={trip.id} trip={trip} />
           ))}
