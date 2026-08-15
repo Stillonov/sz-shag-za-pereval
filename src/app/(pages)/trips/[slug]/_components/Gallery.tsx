@@ -66,7 +66,7 @@ export function Gallery({ trip }: GalleryProps) {
                   sizes="(min-width: 640px) 50vw, 100vw"
                   className="object-cover"
                 />
-                <Badge variant="cream" className="absolute bottom-4 left-4">
+                <Badge variant="creamGlass" className="absolute bottom-4 left-4">
                   {photo.caption}
                 </Badge>
               </div>
