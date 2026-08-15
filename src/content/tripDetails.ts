@@ -36,6 +36,13 @@ export type TripDetail = {
   map: {
     photo: string;
   };
+  team: {
+    id: number;
+    name: string;
+    role: string;
+    bio: string;
+    photo: string;
+  }[];
 };
 
 export const tripDetails: TripDetail[] = [
@@ -119,6 +126,29 @@ export const tripDetails: TripDetail[] = [
     map: {
       photo: '/assets/route-map.jpg',
     },
+    team: [
+      {
+        id: 0,
+        name: 'Сергей Жарахин',
+        role: 'Основатель, старший гид',
+        bio: 'Водит группы по Кавказу больше десяти лет — знает маршрут в любую погоду и умеет держать темп под группу.',
+        photo: '/assets/avatar-placeholder.jpg',
+      },
+      {
+        id: 1,
+        name: 'Марина Тхагапсова',
+        role: 'Гид-инструктор',
+        bio: 'Отвечает за безопасность на маршруте: техника на сложных участках, первая помощь, погодные риски.',
+        photo: '/assets/avatar-placeholder.jpg',
+      },
+      {
+        id: 2,
+        name: 'Артём Косыгин',
+        role: 'Водитель, логист',
+        bio: 'Знает каждую дорогу в горах Карачаево-Черкесии и Кабардино-Балкарии — от асфальта до бездорожья.',
+        photo: '/assets/avatar-placeholder.jpg',
+      },
+    ],
   },
   {
     id: 1,
@@ -178,6 +208,22 @@ export const tripDetails: TripDetail[] = [
     map: {
       photo: '/assets/route-map.jpg',
     },
+    team: [
+      {
+        id: 0,
+        name: 'Сергей Жарахин',
+        role: 'Основатель, старший гид',
+        bio: 'Водит группы по Кавказу больше десяти лет — знает маршрут в любую погоду и умеет держать темп под группу.',
+        photo: '/assets/avatar-placeholder.jpg',
+      },
+      {
+        id: 1,
+        name: 'Артём Косыгин',
+        role: 'Водитель, логист',
+        bio: 'Знает каждую дорогу в горах Карачаево-Черкесии и Кабардино-Балкарии — от асфальта до бездорожья.',
+        photo: '/assets/avatar-placeholder.jpg',
+      },
+    ],
   },
   {
     id: 2,
@@ -245,5 +291,21 @@ export const tripDetails: TripDetail[] = [
     map: {
       photo: '/assets/route-map.jpg',
     },
+    team: [
+      {
+        id: 0,
+        name: 'Сергей Жарахин',
+        role: 'Основатель, старший гид',
+        bio: 'Водит группы по Кавказу больше десяти лет — знает маршрут в любую погоду и умеет держать темп под группу.',
+        photo: '/assets/avatar-placeholder.jpg',
+      },
+      {
+        id: 1,
+        name: 'Марина Тхагапсова',
+        role: 'Гид-инструктор',
+        bio: 'Отвечает за безопасность на маршруте: техника на сложных участках, первая помощь, погодные риски.',
+        photo: '/assets/avatar-placeholder.jpg',
+      },
+    ],
   },
 ];
