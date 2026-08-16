@@ -43,6 +43,11 @@ export type TripDetail = {
     bio: string;
     photo: string;
   }[];
+  price: {
+    note: string;
+    included: string[];
+    excluded: string[];
+  };
 };
 
 export const tripDetails: TripDetail[] = [
@@ -55,7 +60,7 @@ export const tripDetails: TripDetail[] = [
       days: 5,
       distance: 750,
       dates: '15 – 19 августа 2026',
-      price: '100 000 ₽',
+      price: '100 000 ₽',
       photo: '/assets/hero-1.jpg',
     },
     about: {
@@ -149,6 +154,21 @@ export const tripDetails: TripDetail[] = [
         photo: '/assets/avatar-placeholder.jpg',
       },
     ],
+    price: {
+      note: 'Программа может корректироваться из-за погодных условий или состояния дорог. Маршрут включает дороги с перепадами высот до 3000 метров и участки бездорожья, доступные только подготовленному транспорту.',
+      included: [
+        'трансфер по всему маршруту',
+        'проживание (Пятигорск, дача, Домбай)',
+        'завтраки',
+        'работа гидов',
+      ],
+      excluded: [
+        'доп. питание (~1 500–2 000 ₽/день)',
+        'билеты до Минеральных Вод',
+        'страховка',
+        'доп. активности (канатка, мосты, экосборы)',
+      ],
+    },
   },
   {
     id: 1,
@@ -159,7 +179,7 @@ export const tripDetails: TripDetail[] = [
       days: 3,
       distance: 180,
       dates: '2 – 6 сентября 2026',
-      price: '85 000 ₽',
+      price: '85 000 ₽',
       photo: '/assets/hero-2.jpg',
     },
     about: {
@@ -224,6 +244,11 @@ export const tripDetails: TripDetail[] = [
         photo: '/assets/avatar-placeholder.jpg',
       },
     ],
+    price: {
+      note: 'Программа может корректироваться из-за погодных условий — плато открыто не всегда, некоторые локации доступны только в хорошую погоду.',
+      included: ['джип-трансфер по маршруту', 'ночёвка в горном лагере', 'работа гида'],
+      excluded: ['питание', 'билеты до Кисловодска', 'страховка'],
+    },
   },
   {
     id: 2,
@@ -234,7 +259,7 @@ export const tripDetails: TripDetail[] = [
       days: 4,
       distance: 95,
       dates: '20 – 24 сентября 2026',
-      price: '95 000 ₽',
+      price: '95 000 ₽',
       photo: '/assets/hero-3.jpg',
     },
     about: {
@@ -307,5 +332,10 @@ export const tripDetails: TripDetail[] = [
         photo: '/assets/avatar-placeholder.jpg',
       },
     ],
+    price: {
+      note: 'Программа может корректироваться из-за состояния ледника и погодных условий. Маршрут проходит по горным тропам с перепадами высот, нужна базовая физическая подготовка.',
+      included: ['подъём по канатной дороге', 'ночёвка в горном приюте', 'работа гида'],
+      excluded: ['питание', 'билеты до Домбая', 'страховка', 'прокат снаряжения'],
+    },
   },
 ];

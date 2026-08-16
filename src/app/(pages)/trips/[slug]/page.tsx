@@ -6,6 +6,7 @@ import { About } from './_components/About';
 import { Gallery } from './_components/Gallery';
 import { Hero } from './_components/Hero';
 import { Map } from './_components/Map';
+import { Price } from './_components/Price';
 import { Program } from './_components/Program';
 import { Quote } from './_components/Quote';
 import { Team } from './_components/Team';
@@ -25,6 +26,7 @@ export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
       <Gallery trip={trip} />
       <Map trip={trip} />
       <Team trip={trip} />
+      <Price trip={trip} />
     </>
   );
 }
