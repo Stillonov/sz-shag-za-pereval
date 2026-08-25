@@ -9,10 +9,10 @@ import type { HeroContent } from '../types';
 type HeroProps = {
   title: string;
   hero: HeroContent;
-  hasApplication: boolean;
+  isUpcoming: boolean;
 };
 
-export function Hero({ title, hero, hasApplication }: HeroProps) {
+export function Hero({ title, hero, isUpcoming }: HeroProps) {
   return (
     <section className="bg-charcoal relative flex min-h-[calc(100dvh-(--spacing(17)))] flex-col justify-end overflow-hidden">
       <Image
@@ -45,14 +45,14 @@ export function Hero({ title, hero, hasApplication }: HeroProps) {
               <div className="text-cream-100 text-lg font-bold md:text-2xl">{hero.distance}</div>
               <div className="text-cream-400 text-sm uppercase md:text-base">км</div>
             </div>
-            {hero.price ? (
+            {isUpcoming ? (
               <div>
                 <div className="text-cream-100 text-lg font-bold md:text-2xl">{hero.price}</div>
                 <div className="text-cream-400 text-sm uppercase md:text-base">стоимость</div>
               </div>
             ) : null}
           </div>
-          {hasApplication ? (
+          {isUpcoming ? (
             <ScrollButton targetId="application" className="shrink-0">
               Присоединиться
             </ScrollButton>

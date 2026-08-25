@@ -11,7 +11,6 @@ export const tripDetails: TripDetail[] = [
       days: 5,
       distance: 750,
       dates: '15 – 19 августа 2026',
-      price: '100 000 ₽',
       photo: '/assets/hero-1.jpg',
     },
     about: {
