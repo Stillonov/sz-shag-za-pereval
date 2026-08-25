@@ -11,11 +11,14 @@ import { upcomingTrips } from '@/content/upcomingTrips';
 import { cn } from '@/utils/cn';
 
 const AUTOPLAY_DELAY = 6000;
+const hasMultipleTrips = upcomingTrips.length > 1;
 
 export function Hero() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
+    if (!hasMultipleTrips) return;
+
     const id = setInterval(() => {
       setSelectedIndex((current) => (current + 1) % upcomingTrips.length);
     }, AUTOPLAY_DELAY);
@@ -77,17 +80,19 @@ export function Hero() {
         </span>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-14 z-10 flex justify-center gap-3">
-        {upcomingTrips.map((trip, index) => (
-          <span
-            key={trip.id}
-            className={cn(
-              'h-2 rounded-full transition-all duration-500',
-              index === selectedIndex ? 'bg-cream-100 w-8' : 'bg-cream-400 w-2',
-            )}
-          />
-        ))}
-      </div>
+      {hasMultipleTrips ? (
+        <div className="pointer-events-none absolute inset-x-0 bottom-14 z-10 flex justify-center gap-3">
+          {upcomingTrips.map((trip, index) => (
+            <span
+              key={trip.id}
+              className={cn(
+                'h-2 rounded-full transition-all duration-500',
+                index === selectedIndex ? 'bg-cream-100 w-8' : 'bg-cream-400 w-2',
+              )}
+            />
+          ))}
+        </div>
+      ) : null}
     </section>
   );
 }
