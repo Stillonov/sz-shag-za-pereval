@@ -12,6 +12,8 @@ type TripCardProps = {
 };
 
 export function TripCard({ trip, className }: TripCardProps) {
+  const isUpcoming = trip.status !== 'past';
+
   return (
     <Link
       href={`/trips/${trip.slug}`}
@@ -30,9 +32,9 @@ export function TripCard({ trip, className }: TripCardProps) {
         <h3 className="text-cream-100 font-serif text-3xl font-semibold text-balance md:text-4xl">
           {trip.title}
         </h3>
-        <div className="text-cream-300 font-mono-tight mt-3 flex flex-col gap-1 text-sm font-bold uppercase">
+        <div className="text-cream-300 font-mono-tight mt-3 flex min-h-[3lh] flex-col gap-1 text-sm font-bold uppercase">
           <span>{trip.dates}</span>
-          <span>{trip.price}</span>
+          {isUpcoming ? <span>{trip.price}</span> : null}
         </div>
       </div>
     </Link>

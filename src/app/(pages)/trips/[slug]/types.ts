@@ -1,4 +1,4 @@
-import type { TripStatus } from '../types';
+import type { TripStatus } from '@/components/TripCard.types';
 
 export type HeroContent = {
   format: string;

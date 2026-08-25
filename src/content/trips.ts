@@ -8,7 +8,6 @@ export const trips: TripListing[] = [
     region: 'Кавказ',
     status: 'past',
     dates: '15 – 19 августа 2026',
-    price: '100 000 ₽',
     photo: '/assets/hero-1.jpg',
   },
   {
