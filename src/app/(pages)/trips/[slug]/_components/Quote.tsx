@@ -3,12 +3,10 @@ import { Container } from '@/components/Container';
 import type { TripDetail } from '@/content/tripDetails';
 
 type QuoteProps = {
-  trip: TripDetail;
+  quote: NonNullable<TripDetail['quote']>;
 };
 
-export function Quote({ trip }: QuoteProps) {
-  if (!trip.quote) return null;
-
+export function Quote({ quote }: QuoteProps) {
   return (
     <section className="bg-cream-100 pt-16 pb-32 md:pt-24 md:pb-48">
       <Container className="max-w-4xl text-center">
@@ -16,10 +14,10 @@ export function Quote({ trip }: QuoteProps) {
           «
         </div>
         <p className="mt-3 font-serif text-[clamp(var(--text-2xl),4vw,var(--text-5xl))] leading-tight font-medium text-balance">
-          {trip.quote.text}
+          {quote.text}
         </p>
         <div className="text-ash font-mono-tight mt-9 text-sm text-balance uppercase md:text-base">
-          — {trip.quote.author}
+          — {quote.author}
         </div>
       </Container>
     </section>

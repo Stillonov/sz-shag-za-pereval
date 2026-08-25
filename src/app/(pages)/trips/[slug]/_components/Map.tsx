@@ -6,12 +6,10 @@ import { SectionLabel } from '@/components/SectionLabel';
 import type { TripDetail } from '@/content/tripDetails';
 
 type MapProps = {
-  trip: TripDetail;
+  map: NonNullable<TripDetail['map']>;
 };
 
-export function Map({ trip }: MapProps) {
-  if (!trip.map) return null;
-
+export function Map({ map }: MapProps) {
   return (
     <section className="py-16 md:py-24">
       <Container>
@@ -20,7 +18,7 @@ export function Map({ trip }: MapProps) {
           Карта маршрута
         </h2>
         <Image
-          src={trip.map.photo}
+          src={map.photo}
           alt="Карта маршрута"
           width={2752}
           height={1536}

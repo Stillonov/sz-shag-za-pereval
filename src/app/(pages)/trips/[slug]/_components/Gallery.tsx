@@ -10,10 +10,10 @@ import { Container } from '@/components/Container';
 import type { TripDetail } from '@/content/tripDetails';
 
 type GalleryProps = {
-  trip: TripDetail;
+  gallery: NonNullable<TripDetail['gallery']>;
 };
 
-export function Gallery({ trip }: GalleryProps) {
+export function Gallery({ gallery }: GalleryProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'center' });
   const [, forceUpdate] = useReducer((count: number) => count + 1, 0);
 
@@ -27,8 +27,6 @@ export function Gallery({ trip }: GalleryProps) {
 
   const canScrollPrev = emblaApi?.canScrollPrev() ?? false;
   const canScrollNext = emblaApi?.canScrollNext() ?? false;
-
-  if (!trip.gallery || trip.gallery.length === 0) return null;
 
   return (
     <section className="py-16 md:py-24">
@@ -54,7 +52,7 @@ export function Gallery({ trip }: GalleryProps) {
       </Container>
       <Container ref={emblaRef} className="overflow-hidden" fullWidth>
         <div className="-ml-4 flex will-change-transform select-none md:-ml-6 lg:-ml-10">
-          {trip.gallery.map((photo) => (
+          {gallery.map((photo) => (
             <div
               key={photo.id}
               className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] md:pl-6 lg:pl-10"

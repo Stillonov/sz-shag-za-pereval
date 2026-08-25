@@ -6,12 +6,10 @@ import { SectionLabel } from '@/components/SectionLabel';
 import type { TripDetail } from '@/content/tripDetails';
 
 type TeamProps = {
-  trip: TripDetail;
+  team: NonNullable<TripDetail['team']>;
 };
 
-export function Team({ trip }: TeamProps) {
-  if (!trip.team || trip.team.length === 0) return null;
-
+export function Team({ team }: TeamProps) {
   return (
     <section className="bg-sand py-16 md:py-24">
       <Container>
@@ -20,7 +18,7 @@ export function Team({ trip }: TeamProps) {
           Ваши проводники
         </h2>
         <div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-          {trip.team.map((member) => (
+          {team.map((member) => (
             <div key={member.id} className="flex gap-5">
               <Image
                 src={member.photo}
