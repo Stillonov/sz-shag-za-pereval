@@ -34,7 +34,21 @@ All code comments, documents, and READMEs are written in English, regardless of 
 
 ## Utilities
 
-Shared helper functions (e.g. `cn`) go in `src/utils`, imported via the `@/utils/...` path alias.
+Shared, generic helper functions (e.g. `cn`, or a schema-agnostic `fieldErrors<T>`) go in `src/utils`, imported via the `@/utils/...` path alias. "Generic" is the bar for landing there — a function tied to one specific route's own schema/logic (not reusable as-is elsewhere) is not a shared utility; it colocates at the route level instead (see Route-local logic below), even if it *feels* like a utility.
+
+## Route-local logic
+
+A route that needs its own Zod schema, validation helpers, or Server Actions gets that logic colocated in the route segment's own folder (sibling to `page.tsx`), split by responsibility — not bundled into one file, not inside `_components`, and not in a global catch-all folder (`src/schemas`, `src/actions`) unless the thing is genuinely reused across multiple routes:
+
+- `schema.ts` — the Zod schema and the types inferred from it. Nothing else.
+- `utils.ts` — route-specific helper functions built on top of that schema (e.g. a `validateApplication(formData)` wrapping the schema's `safeParse`). Not a home for logic that's actually generic — that still goes in `src/utils`.
+- `actions.ts` — Server Actions for the route (`'use server'`). One file can export several action functions; don't split into one file per action. If a route's actions genuinely grow large (rare), split into an `actions/` folder by domain at that point, not preemptively.
+
+This mirrors Component placement above: colocate with the route that owns the logic, promote to a shared/global location only once something is truly reused, not on the assumption it might be someday.
+
+## Server Action naming
+
+Name each Server Action function as verb + noun describing the mutation it performs (`submitApplication`, `createPost`, `deleteReview`) — no `Action`/`Handler`/`Fn` suffix, matching Next.js's own convention for Server Functions.
 
 ## Icons
 
