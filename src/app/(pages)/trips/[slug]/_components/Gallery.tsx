@@ -5,7 +5,6 @@ import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 
-import { Badge } from '@/components/Badge';
 import { Container } from '@/components/Container';
 
 import type { TripDetail } from '@/content/tripDetails';
@@ -66,9 +65,6 @@ export function Gallery({ trip }: GalleryProps) {
                   sizes="(min-width: 640px) 50vw, 100vw"
                   className="object-cover"
                 />
-                <Badge variant="creamGlass" className="absolute bottom-4 left-4">
-                  {photo.caption}
-                </Badge>
               </div>
             </div>
           ))}

@@ -4,14 +4,13 @@ import { cn } from '@/utils/cn';
 
 type BadgeProps = {
   children: ReactNode;
-  variant?: 'terracotta' | 'charcoal' | 'creamGlass';
+  variant?: 'terracotta' | 'charcoal';
   className?: string;
 };
 
 const variantClasses = {
   terracotta: 'bg-terracotta text-cream-100',
   charcoal: 'bg-charcoal text-cream-100',
-  creamGlass: 'bg-cream-100/70 text-walnut',
 };
 
 export function Badge({ children, variant = 'terracotta', className }: BadgeProps) {
