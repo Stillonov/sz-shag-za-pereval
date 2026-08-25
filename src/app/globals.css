@@ -40,10 +40,6 @@
   --color-cream-800: var(--color-cream-800);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--color-cream-100);
   color: var(--color-charcoal);
