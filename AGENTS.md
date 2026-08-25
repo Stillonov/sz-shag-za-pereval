@@ -38,11 +38,12 @@ Shared, generic helper functions (e.g. `cn`, or a schema-agnostic `fieldErrors<T
 
 ## Route-local logic
 
-A route that needs its own Zod schema, validation helpers, or Server Actions gets that logic colocated in the route segment's own folder (sibling to `page.tsx`), split by responsibility — not bundled into one file, not inside `_components`, and not in a global catch-all folder (`src/schemas`, `src/actions`) unless the thing is genuinely reused across multiple routes:
+A route that needs its own Zod schema, validation helpers, Server Actions, or domain/content types gets that logic colocated in the route segment's own folder (sibling to `page.tsx`), split by responsibility — not bundled into one file, not inside `_components`, and not in a global catch-all folder (`src/schemas`, `src/actions`, `src/types`) unless the thing is genuinely reused across multiple routes:
 
 - `schema.ts` — the Zod schema and the types inferred from it. Nothing else.
 - `utils.ts` — route-specific helper functions built on top of that schema (e.g. a `validateApplication(formData)` wrapping the schema's `safeParse`). Not a home for logic that's actually generic — that still goes in `src/utils`.
 - `actions.ts` — Server Actions for the route (`'use server'`). One file can export several action functions; don't split into one file per action. If a route's actions genuinely grow large (rare), split into an `actions/` folder by domain at that point, not preemptively.
+- `types.ts` — the domain/content shape the route's components need (e.g. `TripDetail` and its per-section types). Colocate with the route/components that consume the shape, not with wherever the data happens to come from today (`src/content/*.ts`, a future DB query, an API response) — the data source is expected to change over the project's life, but the shape components need generally doesn't; a content file imports its type from the route's `types.ts`, never the other way around, so swapping the source later doesn't require moving the types.
 
 This mirrors Component placement above: colocate with the route that owns the logic, promote to a shared/global location only once something is truly reused, not on the assumption it might be someday.
 

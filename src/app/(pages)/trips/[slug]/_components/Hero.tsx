@@ -4,7 +4,7 @@ import { Badge } from '@/components/Badge';
 import { Container } from '@/components/Container';
 import { ScrollButton } from '@/components/ScrollButton';
 
-import type { HeroContent } from '@/content/tripDetails';
+import type { HeroContent } from '../types';
 
 type HeroProps = {
   title: string;

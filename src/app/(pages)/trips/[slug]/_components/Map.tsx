@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { MapContent } from '@/content/tripDetails';
+import type { MapContent } from '../types';
 
 type MapProps = {
   map: MapContent;

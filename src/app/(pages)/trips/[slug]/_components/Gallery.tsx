@@ -7,7 +7,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 
 import { Container } from '@/components/Container';
 
-import type { GalleryPhoto } from '@/content/tripDetails';
+import type { GalleryPhoto } from '../types';
 
 type GalleryProps = {
   gallery: GalleryPhoto[];

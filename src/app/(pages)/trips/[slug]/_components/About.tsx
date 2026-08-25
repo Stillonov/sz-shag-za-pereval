@@ -3,8 +3,9 @@ import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { AboutContent } from '@/content/tripDetails';
 import { cn } from '@/utils/cn';
+
+import type { AboutContent } from '../types';
 
 type AboutProps = {
   title: string;

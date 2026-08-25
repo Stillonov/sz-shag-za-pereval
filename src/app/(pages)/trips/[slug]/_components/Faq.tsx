@@ -3,7 +3,7 @@ import { PlusIcon } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { FaqItem } from '@/content/tripDetails';
+import type { FaqItem } from '../types';
 
 type FaqProps = {
   faq: FaqItem[];

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { TeamMember } from '@/content/tripDetails';
+import type { TeamMember } from '../types';
 
 type TeamProps = {
   team: TeamMember[];

@@ -1,7 +1,7 @@
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { HeroContent, ProgramDay } from '@/content/tripDetails';
+import type { HeroContent, ProgramDay } from '../types';
 
 type ProgramProps = {
   hero: HeroContent;

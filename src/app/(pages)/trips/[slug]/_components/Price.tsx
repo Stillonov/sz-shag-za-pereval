@@ -1,7 +1,7 @@
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { PriceContent } from '@/content/tripDetails';
+import type { PriceContent } from '../types';
 
 type PriceProps = {
   heroPrice: string;

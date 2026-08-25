@@ -1,6 +1,6 @@
 import { Container } from '@/components/Container';
 
-import type { QuoteContent } from '@/content/tripDetails';
+import type { QuoteContent } from '../types';
 
 type QuoteProps = {
   quote: QuoteContent;
