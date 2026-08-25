@@ -1,4 +1,4 @@
-export type TripStatus = 'upcoming' | 'past';
+import type { TripStatus } from '@/types/trips';
 
 export type Trip = {
   id: number;
