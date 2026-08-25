@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
-import type { Review } from '@/content/reviews';
 import { cn } from '@/utils/cn';
+
+import type { Review } from '../types';
 
 type ReviewCardProps = {
   review: Review;

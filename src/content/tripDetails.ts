@@ -5,6 +5,7 @@ export const tripDetails: TripDetail[] = [
     id: 0,
     slug: 'severny-kavkaz',
     title: 'Северный Кавказ',
+    status: 'past',
     hero: {
       format: 'Роуд-трип',
       days: 5,
@@ -157,6 +158,7 @@ export const tripDetails: TripDetail[] = [
     id: 1,
     slug: 'plato-bermamyt',
     title: 'Плато Бермамыт',
+    status: 'upcoming',
     hero: {
       format: 'Джип-тур',
       days: 3,
@@ -246,27 +248,5 @@ export const tripDetails: TripDetail[] = [
           'Плато открыто не всегда — маршрут может корректироваться из-за погодных условий, вид с «Мостика в небо» зависит от облачности.',
       },
     ],
-  },
-  {
-    id: 2,
-    slug: 'ledniki-dombaya',
-    title: 'Ледники Домбая',
-    hero: {
-      format: 'Треккинг',
-      days: 4,
-      distance: 95,
-      dates: '20 – 24 сентября 2026',
-      price: '95 000 ₽',
-      photo: '/assets/hero-3.jpg',
-    },
-    about: {
-      lead: 'Пеший маршрут вдоль ледников Домбая — с ночёвками в горных приютах и видом на Главный Кавказский хребет.',
-      paragraphs: [
-        'Поднимаемся канатной дорогой на Мусса-Ачитару и оттуда начинаем пеший маршрут вдоль кромки ледника.',
-        'Проходим озеро Кара-Кёль и старый Сентинский храм X века, ночуем в приюте у подножия хребта.',
-        'Завершаем поход выходом к смотровой площадке с видом на Домбай-Ульген — одну из главных вершин района.',
-      ],
-      photos: ['/assets/hero-3.jpg', '/assets/hero-2.jpg', '/assets/hero-1.jpg'],
-    },
   },
 ];

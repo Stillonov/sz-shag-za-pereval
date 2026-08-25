@@ -1,21 +1,14 @@
-export type Trip = {
-  id: number;
-  slug: string;
-  title: string;
-  region: string;
-  dates: string;
-  price: string;
-  photo: string;
-};
+import type { TripListing } from '@/app/(pages)/trips/types';
 
-export const trips: Trip[] = [
+export const trips: TripListing[] = [
   {
     id: 0,
     slug: 'severny-kavkaz',
     title: 'Северный Кавказ',
     region: 'Кавказ',
+    status: 'past',
     dates: '15 – 19 августа 2026',
-    price: '100 000 ₽',
+    price: '100 000 ₽',
     photo: '/assets/hero-1.jpg',
   },
   {
@@ -23,17 +16,9 @@ export const trips: Trip[] = [
     slug: 'plato-bermamyt',
     title: 'Плато Бермамыт',
     region: 'Кавказ',
+    status: 'upcoming',
     dates: '2 – 6 сентября 2026',
-    price: '85 000 ₽',
+    price: '85 000 ₽',
     photo: '/assets/hero-2.jpg',
-  },
-  {
-    id: 2,
-    slug: 'ledniki-dombaya',
-    title: 'Ледники Домбая',
-    region: 'Кавказ',
-    dates: '20 – 24 сентября 2026',
-    price: '95 000 ₽',
-    photo: '/assets/hero-3.jpg',
   },
 ];

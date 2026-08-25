@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 
 import { siteTagline } from '@/content/site';
-import { trips } from '@/content/trips';
+import { upcomingTrips } from '@/content/upcomingTrips';
 import { cn } from '@/utils/cn';
 
 const AUTOPLAY_DELAY = 6000;
@@ -17,12 +17,12 @@ export function Hero() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setSelectedIndex((current) => (current + 1) % trips.length);
+      setSelectedIndex((current) => (current + 1) % upcomingTrips.length);
     }, AUTOPLAY_DELAY);
     return () => clearInterval(id);
   }, []);
 
-  const activeTrip = trips[selectedIndex];
+  const activeTrip = upcomingTrips[selectedIndex];
 
   return (
     <section className="bg-charcoal relative min-h-dvh overflow-hidden">
@@ -30,7 +30,7 @@ export function Hero() {
 
       <div className="absolute inset-0">
         <div className="relative h-full">
-          {trips.map((trip, index) => (
+          {upcomingTrips.map((trip, index) => (
             <div
               key={trip.id}
               className={cn(
@@ -78,7 +78,7 @@ export function Hero() {
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-14 z-10 flex justify-center gap-3">
-        {trips.map((trip, index) => (
+        {upcomingTrips.map((trip, index) => (
           <span
             key={trip.id}
             className={cn(

@@ -21,7 +21,7 @@ export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
 
   return (
     <>
-      <Hero title={trip.title} hero={trip.hero} />
+      <Hero title={trip.title} hero={trip.hero} hasApplication={trip.status !== 'past'} />
       <About title={trip.title} about={trip.about} />
       {trip.quote ? <Quote quote={trip.quote} /> : null}
       {trip.program && trip.program.length > 0 ? (
@@ -30,9 +30,11 @@ export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
       {trip.gallery && trip.gallery.length > 0 ? <Gallery gallery={trip.gallery} /> : null}
       {trip.map ? <Map map={trip.map} /> : null}
       {trip.team && trip.team.length > 0 ? <Team team={trip.team} /> : null}
-      {trip.price ? <Price heroPrice={trip.hero.price} price={trip.price} /> : null}
+      {trip.price && trip.hero.price ? (
+        <Price heroPrice={trip.hero.price} price={trip.price} />
+      ) : null}
       {trip.faq && trip.faq.length > 0 ? <Faq faq={trip.faq} /> : null}
-      <Application />
+      {trip.status !== 'past' ? <Application /> : null}
     </>
   );
 }

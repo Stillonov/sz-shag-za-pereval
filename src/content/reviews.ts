@@ -1,10 +1,4 @@
-export type Review = {
-  id: number;
-  name: string;
-  trip: string;
-  text: string;
-  photo: string;
-};
+import type { Review } from '@/app/(home)/types';
 
 export const reviews: Review[] = [
   {

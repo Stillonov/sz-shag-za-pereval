@@ -1,9 +1,11 @@
+import type { TripStatus } from '../types';
+
 export type HeroContent = {
   format: string;
   days: number;
   distance: number;
   dates: string;
-  price: string;
+  price?: string;
   photo: string;
 };
 
@@ -60,6 +62,7 @@ export type TripDetail = {
   id: number;
   slug: string;
   title: string;
+  status: TripStatus;
   hero: HeroContent;
   about: AboutContent;
   quote?: QuoteContent;

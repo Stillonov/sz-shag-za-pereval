@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Badge } from '@/components/Badge';
+import type { Trip } from '@/components/TripCard.types';
 
-import type { Trip } from '@/content/trips';
 import { cn } from '@/utils/cn';
 
 type TripCardProps = {

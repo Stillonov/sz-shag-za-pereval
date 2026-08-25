@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Container } from '@/components/Container';
 import { TripCard } from '@/components/TripCard';
 
-import { trips } from '@/content/trips';
+import { upcomingTrips } from '@/content/upcomingTrips';
 
 export function UpcomingTrips() {
   return (
@@ -21,7 +21,7 @@ export function UpcomingTrips() {
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-10">
-          {trips.map((trip) => (
+          {upcomingTrips.map((trip) => (
             <TripCard key={trip.id} trip={trip} />
           ))}
         </div>
