@@ -13,7 +13,7 @@ export function Price({ trip }: PriceProps) {
       <Container>
         <div className="grid grid-cols-1 items-start gap-12 xl:grid-cols-[0.85fr_1.3fr]">
           <div>
-            <SectionLabel className="mb-4">05 — Стоимость</SectionLabel>
+            <SectionLabel className="mb-4">Стоимость</SectionLabel>
             <div className="text-5xl leading-none font-bold md:text-7xl">{trip.hero.price}</div>
             <p className="text-taupe mt-7 max-w-[44ch] leading-relaxed">{trip.price.note}</p>
           </div>

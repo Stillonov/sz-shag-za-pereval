@@ -10,10 +10,12 @@ type MapProps = {
 };
 
 export function Map({ trip }: MapProps) {
+  if (!trip.map) return null;
+
   return (
     <section className="py-16 md:py-24">
       <Container>
-        <SectionLabel className="mb-4">03 — Маршрут</SectionLabel>
+        <SectionLabel className="mb-4">Маршрут</SectionLabel>
         <h2 className="mb-12 font-serif text-4xl font-medium text-balance md:text-6xl">
           Карта маршрута
         </h2>

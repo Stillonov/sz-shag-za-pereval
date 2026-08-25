@@ -13,7 +13,7 @@ export function Faq({ trip }: FaqProps) {
   return (
     <section className="bg-charcoal text-cream-100 py-16 md:py-24">
       <Container className="max-w-5xl">
-        <SectionLabel className="mb-4">06 — Оргмоменты</SectionLabel>
+        <SectionLabel className="mb-4">Оргмоменты</SectionLabel>
         <h2 className="mb-12 font-serif text-4xl font-medium text-balance md:text-6xl">
           Как всё устроено
         </h2>

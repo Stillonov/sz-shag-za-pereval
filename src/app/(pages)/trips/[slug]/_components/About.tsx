@@ -14,7 +14,7 @@ export function About({ trip }: AboutProps) {
   return (
     <section className="py-16 md:py-24">
       <Container>
-        <SectionLabel className="mb-4">01 — О маршруте</SectionLabel>
+        <SectionLabel className="mb-4">О маршруте</SectionLabel>
         <p className="max-w-2xl font-serif text-3xl leading-tight font-medium text-balance md:text-5xl">
           {trip.about.lead}
         </p>

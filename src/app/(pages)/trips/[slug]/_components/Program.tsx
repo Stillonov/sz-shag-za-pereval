@@ -13,7 +13,7 @@ export function Program({ trip }: ProgramProps) {
       <Container>
         <div className="mb-11 flex flex-wrap items-end justify-between gap-5">
           <div>
-            <SectionLabel className="mb-4">02 — Программа</SectionLabel>
+            <SectionLabel className="mb-4">Программа</SectionLabel>
             <h2 className="font-serif text-4xl font-medium text-balance md:text-6xl">По дням</h2>
           </div>
           <div className="font-mono-tight text-cream-600 text-sm uppercase md:text-base">

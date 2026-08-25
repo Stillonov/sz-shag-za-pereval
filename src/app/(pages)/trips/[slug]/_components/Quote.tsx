@@ -7,6 +7,8 @@ type QuoteProps = {
 };
 
 export function Quote({ trip }: QuoteProps) {
+  if (!trip.quote) return null;
+
   return (
     <section className="bg-cream-100 pt-16 pb-32 md:pt-24 md:pb-48">
       <Container className="max-w-4xl text-center">

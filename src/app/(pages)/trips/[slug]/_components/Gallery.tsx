@@ -28,6 +28,8 @@ export function Gallery({ trip }: GalleryProps) {
   const canScrollPrev = emblaApi?.canScrollPrev() ?? false;
   const canScrollNext = emblaApi?.canScrollNext() ?? false;
 
+  if (!trip.gallery || trip.gallery.length === 0) return null;
+
   return (
     <section className="py-16 md:py-24">
       <Container className="mb-8 flex justify-end gap-2.5">

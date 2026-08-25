@@ -10,10 +10,12 @@ type TeamProps = {
 };
 
 export function Team({ trip }: TeamProps) {
+  if (!trip.team || trip.team.length === 0) return null;
+
   return (
     <section className="bg-sand py-16 md:py-24">
       <Container>
-        <SectionLabel className="mb-4">04 — Команда</SectionLabel>
+        <SectionLabel className="mb-4">Команда</SectionLabel>
         <h2 className="mb-12 font-serif text-4xl font-medium text-balance md:text-6xl">
           Ваши проводники
         </h2>

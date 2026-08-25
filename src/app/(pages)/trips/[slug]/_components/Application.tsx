@@ -53,7 +53,7 @@ export function Application() {
             />
           </div>
           <div>
-            <SectionLabel className="mb-4">07 — Заявка</SectionLabel>
+            <SectionLabel className="mb-4">Заявка</SectionLabel>
             <h2 className="font-serif text-4xl leading-none font-medium text-balance md:text-6xl">
               Готовы к приключениям?
             </h2>
