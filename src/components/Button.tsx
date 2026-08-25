@@ -18,7 +18,7 @@ type ButtonProps = {
 
 export function Button({ children, className, ...props }: ButtonProps) {
   const classes = cn(
-    'bg-terracotta text-cream-100 cursor-pointer font-mono-tight inline-block rounded-md px-9 py-4 text-base font-bold uppercase transition duration-200 ease-out hover:brightness-110',
+    'bg-terracotta text-cream-100 cursor-pointer font-mono-tight inline-block rounded-md px-9 py-4 text-base font-bold uppercase transition duration-200 ease-out hover:brightness-110 disabled:cursor-not-allowed disabled:hover:brightness-100',
     className,
   );
 

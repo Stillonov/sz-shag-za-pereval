@@ -1,12 +1,44 @@
 'use client';
 
+import { useActionState, useState, type SubmitEvent } from 'react';
 import Image from 'next/image';
 
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
+import { submitApplication, type SubmitApplicationState } from '../actions';
+import type { ApplicationErrors } from '../schema';
+import { validateApplication } from '../utils';
+import { ApplicationField } from './ApplicationField';
+import { ApplicationTextareaField } from './ApplicationTextareaField';
+
+const initialState: SubmitApplicationState = { status: 'idle' };
+
 export function Application() {
+  const [errors, setErrors] = useState<ApplicationErrors>({});
+  const [state, formAction, isPending] = useActionState(submitApplication, initialState);
+
+  // Adjust state during render (not an effect) when the action result changes —
+  // see https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes.
+  const [prevState, setPrevState] = useState(state);
+  if (state !== prevState) {
+    setPrevState(state);
+    if (state.status === 'error') setErrors(state.errors);
+  }
+
+  function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
+    const validation = validateApplication(new FormData(event.currentTarget));
+
+    if (!validation.success) {
+      event.preventDefault();
+      setErrors(validation.errors);
+      return;
+    }
+
+    setErrors({});
+  }
+
   return (
     <section id="application" className="py-16 md:py-24">
       <Container className="max-w-5xl">
@@ -29,33 +61,45 @@ export function Application() {
               Чтобы записаться или уточнить подробности, заполните форму — мы свяжемся с вами в
               течение суток.
             </p>
-            <form onSubmit={(event) => event.preventDefault()} className="mt-10 flex flex-col gap-3.5">
-              <input
-                type="text"
-                placeholder="Имя"
-                aria-label="Имя"
-                className="border-charcoal/22 rounded-md border bg-transparent px-4.5 py-4 text-base"
-              />
-              <input
-                type="tel"
-                placeholder="Телефон"
-                aria-label="Телефон"
-                className="border-charcoal/22 rounded-md border bg-transparent px-4.5 py-4 text-base"
-              />
-              <input
-                type="email"
-                placeholder="E-mail"
-                aria-label="E-mail"
-                className="border-charcoal/22 rounded-md border bg-transparent px-4.5 py-4 text-base"
-              />
-              <textarea
-                placeholder="Комментарий или вопрос"
-                aria-label="Комментарий или вопрос"
-                rows={3}
-                className="border-charcoal/22 resize-y rounded-md border bg-transparent px-4.5 py-4 text-base"
-              />
-              <Button type="submit">Присоединиться</Button>
-            </form>
+            {state.status === 'success' ? (
+              <p className="border-cream-400 mt-10 rounded-md border px-4.5 py-4 text-base">
+                Заявка отправлена, мы свяжемся с вами в течение суток.
+              </p>
+            ) : (
+              <form
+                action={formAction}
+                onSubmit={handleSubmit}
+                noValidate
+                className="mt-10 flex flex-col gap-3.5"
+              >
+                {errors.root ? (
+                  <p role="alert" className="text-terracotta text-sm">
+                    {errors.root[0]}
+                  </p>
+                ) : null}
+                <ApplicationField name="name" type="text" placeholder="Имя" error={errors.name} />
+                <ApplicationField
+                  name="phone"
+                  type="tel"
+                  placeholder="Телефон"
+                  error={errors.phone}
+                />
+                <ApplicationField
+                  name="email"
+                  type="email"
+                  placeholder="E-mail"
+                  error={errors.email}
+                />
+                <ApplicationTextareaField
+                  name="message"
+                  placeholder="Комментарий или вопрос"
+                  error={errors.message}
+                />
+                <Button type="submit" disabled={isPending} className="disabled:opacity-40">
+                  {isPending ? 'Отправка…' : 'Присоединиться'}
+                </Button>
+              </form>
+            )}
             <p className="text-ash mt-5 text-xs leading-normal">
               Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и c политикой
               конфиденциальности.
