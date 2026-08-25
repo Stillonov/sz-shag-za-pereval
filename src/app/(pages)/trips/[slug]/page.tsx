@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { tripDetails } from '@/content/tripDetails';
 
 import { About } from './_components/About';
+import { Application } from './_components/Application';
 import { Faq } from './_components/Faq';
 import { Gallery } from './_components/Gallery';
 import { Hero } from './_components/Hero';
@@ -29,6 +30,7 @@ export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
       <Team trip={trip} />
       <Price trip={trip} />
       <Faq trip={trip} />
+      <Application />
     </>
   );
 }

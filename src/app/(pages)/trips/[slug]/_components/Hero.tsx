@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 import { Badge } from '@/components/Badge';
-import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
+import { ScrollButton } from '@/components/ScrollButton';
 
 import type { TripDetail } from '@/content/tripDetails';
 
@@ -50,9 +50,9 @@ export function Hero({ trip }: HeroProps) {
               <div className="text-cream-400 text-sm uppercase md:text-base">стоимость</div>
             </div>
           </div>
-          <Button href="/contacts" className="shrink-0">
+          <ScrollButton targetId="application" className="shrink-0">
             Присоединиться
-          </Button>
+          </ScrollButton>
         </div>
       </Container>
     </section>
