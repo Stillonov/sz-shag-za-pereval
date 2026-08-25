@@ -63,10 +63,10 @@ export type TripDetail = {
   hero: HeroContent;
   about: AboutContent;
   quote?: QuoteContent;
-  program: ProgramDay[];
+  program?: ProgramDay[];
   gallery?: GalleryPhoto[];
   map?: MapContent;
   team?: TeamMember[];
-  price: PriceContent;
-  faq: FaqItem[];
+  price?: PriceContent;
+  faq?: FaqItem[];
 };
