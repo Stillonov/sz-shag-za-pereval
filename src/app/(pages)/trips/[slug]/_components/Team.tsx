@@ -28,7 +28,7 @@ export function Team({ team }: TeamProps) {
                 className="h-24 w-24 shrink-0 rounded-full object-cover"
               />
               <div>
-                <h3 className="font-serif text-2xl font-semibold">{member.name}</h3>
+                <h3 className="font-serif text-2xl font-semibold text-balance">{member.name}</h3>
                 <div className="text-terracotta font-mono-tight mt-1 text-xs uppercase">
                   {member.role}
                 </div>

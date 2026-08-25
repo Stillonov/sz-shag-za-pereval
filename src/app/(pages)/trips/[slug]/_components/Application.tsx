@@ -19,7 +19,7 @@ export function Application() {
   const [errors, setErrors] = useState<ApplicationErrors>({});
   const [state, formAction, isPending] = useActionState(submitApplication, initialState);
 
-  // Adjust state during render (not an effect) when the action result changes —
+  // INFO: adjusts state during render (not an effect) when the action result changes —
   // see https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes.
   const [prevState, setPrevState] = useState(state);
   if (state !== prevState) {
