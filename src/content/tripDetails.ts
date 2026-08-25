@@ -1,58 +1,76 @@
+export type HeroContent = {
+  format: string;
+  days: number;
+  distance: number;
+  dates: string;
+  price: string;
+  photo: string;
+};
+
+export type AboutContent = {
+  lead: string;
+  paragraphs: string[];
+  photos: string[];
+};
+
+export type QuoteContent = {
+  text: string;
+  author: string;
+};
+
+export type ProgramDay = {
+  id: number;
+  n: number;
+  tags: string[];
+  place: string;
+  text: string;
+};
+
+export type GalleryPhoto = {
+  id: number;
+  caption: string;
+  photo: string;
+};
+
+export type MapContent = {
+  photo: string;
+};
+
+export type TeamMember = {
+  id: number;
+  name: string;
+  role: string;
+  bio: string;
+  photo: string;
+};
+
+export type PriceContent = {
+  note: string;
+  included: string[];
+  excluded: string[];
+};
+
+export type FaqItem = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
 export type TripDetail = {
   id: number;
   slug: string;
   title: string;
-  hero: {
-    format: string;
-    days: number;
-    distance: number;
-    dates: string;
-    price: string;
-    photo: string;
-  };
-  about: {
-    lead: string;
-    paragraphs: string[];
-    photos: string[];
-  };
-  quote?: {
-    text: string;
-    author: string;
-  };
+  hero: HeroContent;
+  about: AboutContent;
+  quote?: QuoteContent;
   program: {
-    days: {
-      id: number;
-      n: number;
-      tags: string[];
-      place: string;
-      text: string;
-    }[];
+    days: ProgramDay[];
   };
-  gallery?: {
-    id: number;
-    caption: string;
-    photo: string;
-  }[];
-  map?: {
-    photo: string;
-  };
-  team?: {
-    id: number;
-    name: string;
-    role: string;
-    bio: string;
-    photo: string;
-  }[];
-  price: {
-    note: string;
-    included: string[];
-    excluded: string[];
-  };
-  faq: {
-    id: number;
-    question: string;
-    answer: string;
-  }[];
+  gallery?: GalleryPhoto[];
+  map?: MapContent;
+  team?: TeamMember[];
+  price: PriceContent;
+  faq: FaqItem[];
 };
 
 export const tripDetails: TripDetail[] = [
@@ -296,8 +314,7 @@ export const tripDetails: TripDetail[] = [
       {
         id: 1,
         question: 'Транспорт',
-        answer:
-          'Джип-трансфер по всему маршруту включён. Билеты до Кисловодска — самостоятельно.',
+        answer: 'Джип-трансфер по всему маршруту включён. Билеты до Кисловодска — самостоятельно.',
       },
       {
         id: 2,

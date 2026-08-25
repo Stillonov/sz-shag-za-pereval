@@ -3,13 +3,13 @@ import { PlusIcon } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { TripDetail } from '@/content/tripDetails';
+import type { FaqItem } from '@/content/tripDetails';
 
 type FaqProps = {
-  trip: TripDetail;
+  faq: FaqItem[];
 };
 
-export function Faq({ trip }: FaqProps) {
+export function Faq({ faq }: FaqProps) {
   return (
     <section className="bg-charcoal text-cream-100 py-16 md:py-24">
       <Container className="max-w-5xl">
@@ -23,7 +23,7 @@ export function Faq({ trip }: FaqProps) {
           включённые в процесс.
         </p>
         <div className="border-cream-800 border-t">
-          {trip.faq.map((item) => (
+          {faq.map((item) => (
             <details key={item.id} className="group border-cream-800 border-b">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-5 py-6 select-none [&::-webkit-details-marker]:hidden">
                 <span className="text-2xl font-semibold text-balance">{item.question}</span>

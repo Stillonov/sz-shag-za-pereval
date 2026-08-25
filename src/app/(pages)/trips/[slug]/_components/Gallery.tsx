@@ -7,10 +7,10 @@ import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 
 import { Container } from '@/components/Container';
 
-import type { TripDetail } from '@/content/tripDetails';
+import type { GalleryPhoto } from '@/content/tripDetails';
 
 type GalleryProps = {
-  gallery: NonNullable<TripDetail['gallery']>;
+  gallery: GalleryPhoto[];
 };
 
 export function Gallery({ gallery }: GalleryProps) {

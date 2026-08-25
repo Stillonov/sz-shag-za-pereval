@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { TripDetail } from '@/content/tripDetails';
+import type { TeamMember } from '@/content/tripDetails';
 
 type TeamProps = {
-  team: NonNullable<TripDetail['team']>;
+  team: TeamMember[];
 };
 
 export function Team({ team }: TeamProps) {

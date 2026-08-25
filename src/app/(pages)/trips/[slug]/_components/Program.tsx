@@ -1,13 +1,14 @@
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { TripDetail } from '@/content/tripDetails';
+import type { HeroContent, ProgramDay } from '@/content/tripDetails';
 
 type ProgramProps = {
-  trip: TripDetail;
+  hero: HeroContent;
+  days: ProgramDay[];
 };
 
-export function Program({ trip }: ProgramProps) {
+export function Program({ hero, days }: ProgramProps) {
   return (
     <section className="bg-charcoal text-cream-100 py-16 md:py-24">
       <Container>
@@ -17,12 +18,12 @@ export function Program({ trip }: ProgramProps) {
             <h2 className="font-serif text-4xl font-medium text-balance md:text-6xl">По дням</h2>
           </div>
           <div className="font-mono-tight text-cream-600 text-sm uppercase md:text-base">
-            {trip.hero.days} дней · {trip.hero.distance} км · {trip.hero.dates}
+            {hero.days} дней · {hero.distance} км · {hero.dates}
           </div>
         </div>
 
         <div className="border-cream-800 border-t">
-          {trip.program.days.map((day) => (
+          {days.map((day) => (
             <div
               key={day.id}
               className="border-cream-800 grid grid-cols-1 gap-2 border-b py-6 md:grid-cols-[210px_1fr_1.3fr] md:gap-7"

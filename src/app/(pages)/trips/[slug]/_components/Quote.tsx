@@ -1,9 +1,9 @@
 import { Container } from '@/components/Container';
 
-import type { TripDetail } from '@/content/tripDetails';
+import type { QuoteContent } from '@/content/tripDetails';
 
 type QuoteProps = {
-  quote: NonNullable<TripDetail['quote']>;
+  quote: QuoteContent;
 };
 
 export function Quote({ quote }: QuoteProps) {

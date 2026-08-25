@@ -21,15 +21,15 @@ export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
 
   return (
     <>
-      <Hero trip={trip} />
-      <About trip={trip} />
+      <Hero title={trip.title} hero={trip.hero} />
+      <About title={trip.title} about={trip.about} />
       {trip.quote ? <Quote quote={trip.quote} /> : null}
-      <Program trip={trip} />
+      <Program hero={trip.hero} days={trip.program.days} />
       {trip.gallery && trip.gallery.length > 0 ? <Gallery gallery={trip.gallery} /> : null}
       {trip.map ? <Map map={trip.map} /> : null}
       {trip.team && trip.team.length > 0 ? <Team team={trip.team} /> : null}
-      <Price trip={trip} />
-      <Faq trip={trip} />
+      <Price heroPrice={trip.hero.price} price={trip.price} />
+      <Faq faq={trip.faq} />
       <Application />
     </>
   );

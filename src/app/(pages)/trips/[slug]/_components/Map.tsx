@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
-import type { TripDetail } from '@/content/tripDetails';
+import type { MapContent } from '@/content/tripDetails';
 
 type MapProps = {
-  map: NonNullable<TripDetail['map']>;
+  map: MapContent;
 };
 
 export function Map({ map }: MapProps) {
