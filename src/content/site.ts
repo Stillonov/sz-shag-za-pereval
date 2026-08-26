@@ -15,11 +15,9 @@ export const navLinks = [
 ];
 
 export const siteContact = {
-  email: 'hello@shagzapereval.ru',
   phone: '+7 913 000 00 00',
+  email: 'hello@shagzapereval.ru',
+  address: 'г. Казань, ул. Островского, 57б',
 };
 
-export const socialLinks = [
-  { href: '#', label: 'Telegram' },
-  { href: '#', label: 'VK' },
-];
+export const socialLinks = [{ href: 'https://t.me/zharakhin_sergey', label: 'Telegram' }];
