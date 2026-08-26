@@ -6,6 +6,7 @@ export const APPLICATION_MESSAGE_MAX_LENGTH = 1000;
 export const HONEYPOT_FIELD = 'company';
 
 export const applicationSchema = z.object({
+  tripTitle: z.string().trim().min(1),
   name: z.string().trim().min(2, 'Введите имя'),
   phone: z.string().trim().min(10, 'Введите телефон'),
   email: z.string().trim().pipe(z.email('Некорректный e-mail')),

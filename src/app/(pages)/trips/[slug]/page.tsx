@@ -36,7 +36,7 @@ export default async function TripPage(props: PageProps<'/trips/[slug]'>) {
         <Price heroPrice={trip.hero.price} price={trip.price} />
       ) : null}
       {trip.faq && trip.faq.length > 0 ? <Faq faq={trip.faq} /> : null}
-      {isUpcoming ? <Application /> : null}
+      {isUpcoming ? <Application tripTitle={trip.title} /> : null}
     </>
   );
 }

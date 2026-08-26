@@ -15,7 +15,11 @@ import { ApplicationTextareaField } from './ApplicationTextareaField';
 
 const initialState: SubmitApplicationState = { status: 'idle' };
 
-export function Application() {
+type ApplicationProps = {
+  tripTitle: string;
+};
+
+export function Application({ tripTitle }: ApplicationProps) {
   const [errors, setErrors] = useState<ApplicationErrors>({});
   const [state, formAction, isPending] = useActionState(submitApplication, initialState);
 
@@ -87,6 +91,7 @@ export function Application() {
                   className="absolute"
                   style={{ left: '-9999px' }}
                 />
+                <input type="hidden" name="tripTitle" value={tripTitle} />
                 <ApplicationField name="name" type="text" placeholder="Имя" error={errors.name} />
                 <ApplicationField
                   name="phone"
@@ -108,12 +113,12 @@ export function Application() {
                 <Button type="submit" disabled={isPending} className="disabled:opacity-40">
                   {isPending ? 'Отправка…' : 'Присоединиться'}
                 </Button>
+                <p className="text-ash mt-5 text-xs leading-normal">
+                  Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и c политикой
+                  конфиденциальности.
+                </p>
               </form>
             )}
-            <p className="text-ash mt-5 text-xs leading-normal">
-              Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и c политикой
-              конфиденциальности.
-            </p>
           </div>
         </div>
       </Container>
