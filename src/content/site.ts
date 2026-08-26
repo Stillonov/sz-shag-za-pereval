@@ -1,4 +1,4 @@
-export const siteTagline = 'Бюро горных экспедиций';
+export const siteTagline = 'Бюро приключений';
 
 export const navLinks = [
   { href: '/', label: 'Главная' },
