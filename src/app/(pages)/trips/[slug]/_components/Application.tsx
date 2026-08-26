@@ -62,8 +62,8 @@ export function Application({ tripTitle }: ApplicationProps) {
               Хотите с нами?
             </h2>
             <p className="text-taupe mt-5 max-w-[44ch] leading-relaxed">
-              Чтобы записаться или уточнить подробности, заполните форму — мы свяжемся с вами в
-              течение суток.
+              Хотите присоединиться или уточнить подробности? Оставьте заявку — мы свяжемся с вами
+              в течение суток.
             </p>
             {state.status === 'success' ? (
               <p className="border-cream-400 mt-10 rounded-md border px-4.5 py-4 text-base">
