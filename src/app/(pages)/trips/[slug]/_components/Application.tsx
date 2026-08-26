@@ -8,7 +8,7 @@ import { Container } from '@/components/Container';
 import { SectionLabel } from '@/components/SectionLabel';
 
 import { submitApplication, type SubmitApplicationState } from '../actions';
-import type { ApplicationErrors } from '../schema';
+import { HONEYPOT_FIELD, type ApplicationErrors } from '../schema';
 import { validateApplication } from '../utils';
 import { ApplicationField } from './ApplicationField';
 import { ApplicationTextareaField } from './ApplicationTextareaField';
@@ -42,20 +42,20 @@ export function Application() {
   return (
     <section id="application" className="py-16 md:py-24">
       <Container className="max-w-5xl">
-        <div className="grid grid-cols-1 items-center gap-14 md:grid-cols-2">
-          <div className="relative hidden overflow-hidden rounded-lg md:block md:h-full">
+        <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-5 md:gap-6 lg:gap-10">
+          <div className="relative hidden overflow-hidden rounded-lg md:col-span-2 md:block md:h-full">
             <Image
               src="/assets/section07-application.jpg"
               alt="Шаг за перевал"
               fill
-              sizes="50vw"
+              sizes="40vw"
               className="object-cover"
             />
           </div>
-          <div>
+          <div className="md:col-span-3">
             <SectionLabel className="mb-4">Заявка</SectionLabel>
             <h2 className="font-serif text-4xl leading-none font-medium text-balance md:text-6xl">
-              Готовы к приключениям?
+              Хотите с нами?
             </h2>
             <p className="text-taupe mt-5 max-w-[44ch] leading-relaxed">
               Чтобы записаться или уточнить подробности, заполните форму — мы свяжемся с вами в
@@ -77,6 +77,16 @@ export function Application() {
                     {errors.root[0]}
                   </p>
                 ) : null}
+                {/* INFO: honeypot — hidden from real users, catches bots that fill every field. */}
+                <input
+                  type="text"
+                  name={HONEYPOT_FIELD}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute"
+                  style={{ left: '-9999px' }}
+                />
                 <ApplicationField name="name" type="text" placeholder="Имя" error={errors.name} />
                 <ApplicationField
                   name="phone"
