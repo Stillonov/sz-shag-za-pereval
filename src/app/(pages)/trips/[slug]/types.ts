@@ -58,6 +58,10 @@ export type FaqItem = {
   answer: string;
 };
 
+export type ApplicationContent = {
+  photo: string;
+};
+
 export type TripDetail = {
   id: number;
   slug: string;
@@ -72,4 +76,5 @@ export type TripDetail = {
   team?: TeamMember[];
   price?: PriceContent;
   faq?: FaqItem[];
+  application?: ApplicationContent;
 };

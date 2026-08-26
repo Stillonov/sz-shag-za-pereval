@@ -17,9 +17,10 @@ const initialState: SubmitApplicationState = { status: 'idle' };
 
 type ApplicationProps = {
   tripTitle: string;
+  photo: string;
 };
 
-export function Application({ tripTitle }: ApplicationProps) {
+export function Application({ tripTitle, photo }: ApplicationProps) {
   const [errors, setErrors] = useState<ApplicationErrors>({});
   const [state, formAction, isPending] = useActionState(submitApplication, initialState);
 
@@ -48,13 +49,7 @@ export function Application({ tripTitle }: ApplicationProps) {
       <Container className="max-w-5xl">
         <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-5 md:gap-6 lg:gap-10">
           <div className="relative hidden overflow-hidden rounded-lg md:col-span-2 md:block md:h-full">
-            <Image
-              src="/assets/section07-application.jpg"
-              alt="Шаг за перевал"
-              fill
-              sizes="40vw"
-              className="object-cover"
-            />
+            <Image src={photo} alt={tripTitle} fill sizes="40vw" className="object-cover" />
           </div>
           <div className="md:col-span-3">
             <SectionLabel className="mb-4">Заявка</SectionLabel>
@@ -62,8 +57,8 @@ export function Application({ tripTitle }: ApplicationProps) {
               Хотите с нами?
             </h2>
             <p className="text-taupe mt-5 max-w-[44ch] leading-relaxed">
-              Хотите присоединиться или уточнить подробности? Оставьте заявку — мы свяжемся с вами
-              в течение суток.
+              Хотите присоединиться или уточнить подробности? Оставьте заявку — мы свяжемся с вами в
+              течение суток.
             </p>
             {state.status === 'success' ? (
               <p className="border-cream-400 mt-10 rounded-md border px-4.5 py-4 text-base">

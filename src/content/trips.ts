@@ -8,7 +8,7 @@ export const trips: TripListing[] = [
     region: 'Кавказ',
     status: 'past',
     dates: '15 – 19 августа 2026',
-    photo: '/assets/hero-1.jpg',
+    photo: '/assets/trips/severny-kavkaz/hero.jpg',
   },
   {
     id: 1,
@@ -18,6 +18,6 @@ export const trips: TripListing[] = [
     status: 'upcoming',
     dates: '2 – 6 сентября 2026',
     price: '85 000 ₽',
-    photo: '/assets/hero-2.jpg',
+    photo: '/assets/trips/plato-bermamyt/hero.jpg',
   },
 ];

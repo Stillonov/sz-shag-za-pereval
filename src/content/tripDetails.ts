@@ -11,7 +11,7 @@ export const tripDetails: TripDetail[] = [
       days: 5,
       distance: 750,
       dates: '15 – 19 августа 2026',
-      photo: '/assets/hero-1.jpg',
+      photo: '/assets/trips/severny-kavkaz/hero.jpg',
     },
     about: {
       lead: 'Авторское путешествие по Северному Кавказу — от ущелий до плато над облаками.',
@@ -21,9 +21,9 @@ export const tripDetails: TripDetail[] = [
         'Рассвет встречаем на плато Бермамыт — «Мостик в небо» и Скалы-Монахи, — а завершаем маршрут в Домбае: канатная дорога на Мусса-Ачитару, озеро Кара-Кёль и Сентинский храм X века.',
       ],
       photos: [
-        '/assets/about-cherek.jpg',
-        '/assets/about-dzhily-su.jpg',
-        '/assets/about-cascade-lake.jpg',
+        '/assets/trips/severny-kavkaz/about-01.jpg',
+        '/assets/trips/severny-kavkaz/about-02.jpg',
+        '/assets/trips/severny-kavkaz/about-03.jpg',
       ],
     },
     quote: {
@@ -68,13 +68,21 @@ export const tripDetails: TripDetail[] = [
       },
     ],
     gallery: [
-      { id: 0, caption: 'Черекская теснина', photo: '/assets/gallery-cherek.jpg' },
-      { id: 1, caption: 'Сентинский храм', photo: '/assets/gallery-sentinsky.jpg' },
-      { id: 2, caption: 'Мусса-Ачитара', photo: '/assets/gallery-mussa-achitara.jpg' },
-      { id: 3, caption: 'плато Бермамыт', photo: '/assets/gallery-bermamyt.jpg' },
-      { id: 4, caption: '«Мостик в небо»', photo: '/assets/gallery-mostik-nebo.jpg' },
-      { id: 5, caption: 'дорога на Джилы-Су', photo: '/assets/gallery-jilysu-road.jpg' },
-      { id: 6, caption: 'водопад Каракая-Суу', photo: '/assets/gallery-karakaya-falls.jpg' },
+      { id: 0, caption: 'Черекская теснина', photo: '/assets/trips/severny-kavkaz/gallery-01.jpg' },
+      { id: 1, caption: 'Сентинский храм', photo: '/assets/trips/severny-kavkaz/gallery-02.jpg' },
+      { id: 2, caption: 'Мусса-Ачитара', photo: '/assets/trips/severny-kavkaz/gallery-03.jpg' },
+      { id: 3, caption: 'плато Бермамыт', photo: '/assets/trips/severny-kavkaz/gallery-04.jpg' },
+      { id: 4, caption: '«Мостик в небо»', photo: '/assets/trips/severny-kavkaz/gallery-05.jpg' },
+      {
+        id: 5,
+        caption: 'дорога на Джилы-Су',
+        photo: '/assets/trips/severny-kavkaz/gallery-06.jpg',
+      },
+      {
+        id: 6,
+        caption: 'водопад Каракая-Суу',
+        photo: '/assets/trips/severny-kavkaz/gallery-07.jpg',
+      },
     ],
     team: [
       {
@@ -82,7 +90,7 @@ export const tripDetails: TripDetail[] = [
         name: 'Сергей Жарахин',
         role: 'Основатель, гид',
         bio: 'Сам выбирает места, прокладывает маршруты и ведёт по ним людей. Ему важно не просто показать красивое место, а создать путешествие, в котором интересно находиться от начала до конца.',
-        photo: '/assets/userpic-01.jpeg',
+        photo: '/assets/team/userpic-01.jpeg',
       },
     ],
     price: {
@@ -150,7 +158,7 @@ export const tripDetails: TripDetail[] = [
       distance: 180,
       dates: '2 – 6 сентября 2026',
       price: '85 000 ₽',
-      photo: '/assets/hero-2.jpg',
+      photo: '/assets/trips/plato-bermamyt/hero.jpg',
     },
     about: {
       lead: 'Короткий джип-тур на одно из самых высоких плато Кавказа — над облаками и без суеты.',
@@ -159,7 +167,11 @@ export const tripDetails: TripDetail[] = [
         'Ночуем в горном лагере, встречаем закат на краю плато и слушаем тишину, которая бывает только высоко в горах.',
         'На рассвете выходим на смотровую площадку «Мостик в небо» — именно ради этого вида сюда едут второй и третий раз.',
       ],
-      photos: ['/assets/hero-2.jpg', '/assets/hero-1.jpg', '/assets/hero-3.jpg'],
+      photos: [
+        '/assets/trips/plato-bermamyt/about-01.jpg',
+        '/assets/trips/plato-bermamyt/about-02.jpg',
+        '/assets/trips/plato-bermamyt/about-03.jpg',
+      ],
     },
     quote: {
       text: 'Бермамыт не встречает сразу — сначала туман, потом облака проваливаются вниз, и остаётся только плато и небо.',
@@ -189,9 +201,9 @@ export const tripDetails: TripDetail[] = [
       },
     ],
     gallery: [
-      { id: 0, caption: 'Приэльбрусье', photo: '/assets/hero-2.jpg' },
-      { id: 1, caption: 'Плато Бермамыт', photo: '/assets/hero-1.jpg' },
-      { id: 2, caption: 'Мостик в небо', photo: '/assets/hero-3.jpg' },
+      { id: 0, caption: 'Приэльбрусье', photo: '/assets/trips/plato-bermamyt/gallery-01.jpg' },
+      { id: 1, caption: 'Плато Бермамыт', photo: '/assets/trips/plato-bermamyt/gallery-02.jpg' },
+      { id: 2, caption: 'Мостик в небо', photo: '/assets/trips/plato-bermamyt/gallery-03.jpg' },
     ],
     team: [
       {
@@ -199,7 +211,7 @@ export const tripDetails: TripDetail[] = [
         name: 'Сергей Жарахин',
         role: 'Основатель, гид',
         bio: 'Сам выбирает места, прокладывает маршруты и ведёт по ним людей. Ему важно не просто показать красивое место, а создать путешествие, в котором интересно находиться от начала до конца.',
-        photo: '/assets/userpic-01.jpeg',
+        photo: '/assets/team/userpic-01.jpeg',
       },
     ],
     price: {
@@ -226,5 +238,8 @@ export const tripDetails: TripDetail[] = [
           'Плато открыто не всегда — маршрут может корректироваться из-за погодных условий, вид с «Мостика в небо» зависит от облачности.',
       },
     ],
+    application: {
+      photo: '/assets/trips/plato-bermamyt/application.jpg',
+    },
   },
 ];

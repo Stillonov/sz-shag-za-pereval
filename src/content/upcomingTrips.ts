@@ -8,6 +8,6 @@ export const upcomingTrips: Trip[] = [
     region: 'Кавказ',
     dates: '2 – 6 сентября 2026',
     price: '85 000 ₽',
-    photo: '/assets/hero-2.jpg',
+    photo: '/assets/trips/plato-bermamyt/hero.jpg',
   },
 ];

@@ -99,3 +99,20 @@ Every heading element (`h1`–`h6`) gets `text-balance`, so it never leaves a lo
 ## No units in field names
 
 Don't bake a unit into a field name (`distanceKm`, `priceRub`, etc.) — name it plainly (`distance`, `price`) even when the value is a bare number. Keep the unit implicit/contextual instead.
+
+## Image file naming
+
+An image that's one of several items in the same content array (gallery photos, `about.photos`, etc.) is named `type-NN.ext` — a short type/category prefix, then a two-digit sequential number starting at `01`, in the same order as the array (e.g. `gallery-01.jpg`, `gallery-02.jpg`, ... `about-01.jpg`, `about-02.jpg`). Don't name array items after their subject (`gallery-cherek.jpg`) — subjects change as placeholder content gets replaced, but the array position doesn't.
+
+An image used for a single scalar field (a trip's `hero.photo`, a team member's `photo`) doesn't need the numbered convention — name it for what it is (`userpic-placeholder.jpg`).
+
+## Image folder structure
+
+`public/assets/` is organized by who owns the image, not by file type:
+
+- `public/assets/trips/<slug>/` — every image belonging to one trip's content (`hero.photo`, `about.photos`, `gallery`), including placeholder photos reused across trips today — each trip gets its own copy rather than pointing at a shared file, since real per-trip photos will replace them independently later.
+- `public/assets/team/` — team member photos.
+- `public/assets/reviews/` — review author photos.
+- `public/assets/` (root) — brand/UI chrome referenced directly by components rather than by content data (the logo, a hardcoded section image).
+
+No shared folder for trip content — even identical placeholder bytes get a copy per trip, so replacing one trip's photos later never risks affecting another trip.
